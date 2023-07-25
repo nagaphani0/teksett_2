@@ -1,0 +1,16 @@
+git config --global user.name nagaphani0 
+git config --global user.email nagaphani9030@gmail.com 
+
+git init 
+
+git add .
+
+git commit -m  'first'
+
+git branch -M main
+git push -u origin master 
+
+
+git remote add origin https://github.com/nagaphani0/tessect_2
+
+$ git add .|git commit -m 'second' |git push
