@@ -112,6 +112,7 @@ export default function About() {
       </div>
       <Circles />
       {/* <MyTeam /> */}
+      <AboutLast />
       <LastInPage model={"case studies"} />
     </div>
   );
@@ -585,8 +586,54 @@ export function AboutLast() {
   return (
     <div>
       <div className="">
-        <div className="col"></div>
-        <div className="col"></div>
+        <div className="col">
+          
+        </div>
+        <div className="col">
+          <div className="row">
+            <div className="col">
+              <img src={team1} alt="" />
+            </div>
+            <div className="col">
+              <div
+                className=""
+                style={{
+                  color: "#FFF",
+                  fontFamily: "Barlow",
+                  fontSize: "56px",
+                  fontStyle: "normal",
+                  fontWeight: 400,
+                  lineHeight: "70px" /* 125% */,
+                  letterSpacing: "-1px",
+                }}>
+                Robert Steward
+              </div>
+              <div className="">
+                Teksett’s cutting-edge technology has streamlined our financial
+                processes, making them more efficient and secure. The platform
+                they provided us with is user-friendly, intuitive, and has
+                significantly improved our productivity. It has allowed us to
+                focus more on our core business activities while leaving the
+                complexities of financial management to their capable hands.
+              </div>
+              <hr />
+
+              <div
+                className=""
+                style={{
+                  color: "#0F46F5",
+                  fontFamily: "Barlow",
+                  fontSize: "30px",
+                  fontStyle: "normal",
+                  fontWeight: "500",
+                  lineHeight: "70px" /* 233.333% */,
+                  letterSpacing: "-1px",
+                }}>
+                CFO, Fintec Client
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

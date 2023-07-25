@@ -801,14 +801,8 @@ function HomeTestimonials() {
         title={"Hear from our satisfied clients"}
       />
       <div className="row d-flex bg-black">
-        <div className="col-7 p-2">
-          <img
-            src={homegirl}
-            className=""
-            alt="none"
-            // width="auto"
-            // height="635px"
-          />
+        <div className="col-7 p-0">
+          <img src={homegirl} className="img-fluid" alt="none" />
         </div>
         <div className="col ">
           <div className="">
