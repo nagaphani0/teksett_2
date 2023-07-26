@@ -15,4 +15,8 @@ git remote add origin https://github.com/nagaphani0/tessect_2
 
 git add . | git commit -m 'second' | git push master
 
-git pull origin master
+git pull origin master 
+
+
+naga from vs from desk gitpod
+    
