@@ -19,4 +19,3 @@ git pull origin master
 
 
 naga from vs from desk gitpod
-    
