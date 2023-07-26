@@ -1,13 +1,5 @@
 import { CommonPageHead, CommonPlusOpen, Sponsers } from "./common";
 import aboutintro from "../images/aboutintro.png";
-// import team1 from "../images/team (1).png";
-// import team2 from "../images/team (2).png";
-// import team3 from "../images/team (3).png";
-// import team4 from "../images/team (4).png";
-// import team5 from "../images/team (5).png";
-// import team6 from "../images/team (6).png";
-// import team7 from "../images/team (7).png";
-// import team8 from "../images/team (8).png";
 import last1 from "../images/lastpage (1).png";
 import last2 from "../images/lastpage (2).png";
 import last3 from "../images/lastpage (3).png";
@@ -51,7 +43,7 @@ export default function About() {
         page={"About us"}
       />
       <img
-        className=" img-fluid"
+        className="img-fluid"
         src={aboutintro}
         alt="intro"
         // height={"490px"}
@@ -119,7 +111,6 @@ export default function About() {
       {/* <MyTeam /> */}
       <AboutLast />
       {/* <LastInPage model={"case studies"} /> */}
-
     </div>
   );
 }

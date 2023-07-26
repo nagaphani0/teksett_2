@@ -3,9 +3,9 @@ import rightarrow from "../images/rightarrow.png";
 import { Link, useParams } from "react-router-dom";
 import HEALTHCAREpic from "../images/extenddedhelth.png";
 import TELECOMMUNICATIONpic from "../images/industries/extended/Telecom.png";
-import FINTECHpic from "../images/industries/extended/Fintech.png";
+// import FINTECHpic from "../images/industries/extended/Fintech.png";
 import RETAILMANUFACTURINGpic from "../images/industries/extended/Retail & Manufacturing.png";
-import AGRICULTUREpic from "../images/industries/extended/Agriculture.png";
+// import AGRICULTUREpic from "../images/industries/extended/Agriculture.png";
 import GamingEntertainmentpic from "../images/industries/extended/Gamming.png";
 import GOVERNMENTpic from "../images/industries/extended/Government.png";
 import INSURANCEpic from "../images/industries/extended/Insurance.png";
@@ -14,8 +14,8 @@ import UTILITIESpic from "../images/industries/extended/Utilities.png";
 import staffingpic from "../images/services/extended/staffaug.png";
 import SOFTWAREVARpic from "../images/services/extended/Software VAR.png";
 import ITConsultancypic from "../images/services/extended/itconsul.png";
-import DataScienceSolutionspic from "../images/services/extended/datasciencedov.png";
-import BusinessAnalyticspic from "../images/services/extended/Business Analytics.png";
+// import DataScienceSolutionspic from "../images/services/extended/datasciencedov.png";
+// import BusinessAnalyticspic from "../images/services/extended/Business Analytics.png";
 import ProjectManagementpic from "../images/services/extended/productmanagement.png";
 
 export default function CommonIS({ pic, title, des, points, mainlin }) {
@@ -23,35 +23,37 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
 
   return (
     <div
-      className="p-0 m-1"
+      className="m-0"
       style={{
         background: isHovered ? "#161616" : "#FFFFFF",
         color: isHovered ? "#FFFFFF" : "#161616",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
-      <div className="row d-flex flex-row m-5">
-        <div className="col-5">
+      <div className="row d-flex flex-row mx-0 p-2">
+        <div className="col-4 mx-0">
           <img
             src={pic}
             alt="none"
-            className="p-1"
-            style={{
-              width: "auto",
-              height: "305px",
-              flexShrink: "0",
-              margin: "28px",
-            }}
+            className="img-fluid py-md-1 px-0 m-1 h-auto w-auto"
+            style={
+              {
+                // width: "auto",
+                // height: "305px",
+                // flexShrink: "0",
+                // margin: "28px",
+              }
+            }
           />
         </div>
         <div className="col-5">
           <div
-            className=""
+            className="  "
             style={{
               // color: "#161616",
               fontSize: "37px",
               fontFamily: "Barlow",
-              // lineHeight: "88px",
+              lineHeight: "80px",
               letterSpacing: "-1.2px",
             }}>
             {title}
@@ -78,13 +80,13 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
             }}>
             Top Benefits
           </div>
-          <div className="col-6" id="points" style={{ fontSize: "13px" }}>
+          <div className="col-6" id="points" style={{ fontSize: "12px" }}>
             {points.map((point) => (
               <div
                 className="col m-2 d-flex"
                 style={{
                   borderRadius: "4px",
-                  width: "332px",
+                  // width: "332px",
                   background: "rgba(0, 0, 0, 0.05)",
                 }}>
                 <div className="">
@@ -103,7 +105,7 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
                     </g>
                   </svg>
                 </div>
-                <div className="col">{point}</div>
+                <div className="col ">{point}</div>
               </div>
             ))}
           </div>
@@ -245,7 +247,7 @@ export function CommonPageHead({ page, title }) {
         TEksett &gt; {page}{" "}
       </p>
       <div
-        className=""
+        className="col-8"
         style={{
           fontSize: "56px",
         }}>
@@ -418,7 +420,8 @@ export function ButtonSelecter() {
     },
     {
       ExpandedModel: "FINTECH",
-      pic: FINTECHpic,
+      // pic: FINTECHpic,
+      pic: "https://s3-alpha-sig.figma.com/img/8fe9/dd35/100ba0812d9efe89ab6af616ab17420e?Expires=1691366400&Signature=Y2XIiXKgXgkl32Bsej5Q2nue6CxhD9iSrcfcxUVQb08ntFK6ti-hnjC-mrV-geYOH63ewFFUVbPFYkf5ZN86R6-D4F-JOJ~1K-ShttRPOyBfyjGhrmA-g-AbxD89BgdISjj4nHc-crz1OnecfF4UnA-LU3dHPCVYunRMiQqzxi8JfsuSlcWMabyyF0lqTHCyu6FIp480Fx9DeNSOKXJxqlpSxqOx5Ajf5iwttBCShcE1mIXlMMLc-DTpHYtWvHHST~g6fgsxWKfb90-x-6mGj2kts2H0od6jhGTvhjcF0pEJboeOoyOSqMzgECpBdLOy9eNIEFOVxCz5bEsPofoPYA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
       Herotext: "Transform Your Fintech Operations with Our IT Solutions",
       Subtext:
         "With our expertise in IT solutions, we can help you streamline your fintech operations and drive your business growth forward",
@@ -540,7 +543,8 @@ export function ButtonSelecter() {
     },
     {
       ExpandedModel: "AGRICULTURE",
-      pic: AGRICULTUREpic,
+      // pic: AGRICULTUREpic,
+      pic: "https://s3-alpha-sig.figma.com/img/3129/240a/566ba2e175467c74f60927e7bcd70817?Expires=1691366400&Signature=glDeElSGe1Wol-QHXVIY1MggrqlyWb8BkHFYTVNe05JIE3E0rn0BxxImYgQ-mkfBvhsx6gD7IZidPtX77u7HM4JQ7szATWOz31C9HhW5hZaHUbFqDAE0OXb21hmnYJKSYXpBcOjjX~bLZzk1bQmioQHfN~WLNP6INrwKgfVE0VXEQL1RPZyRTmZoBb6BsLET-xQiPs4JRvlIO-S~W~mWyyFpwPmOedGof7g0WS4wQeUwFfAp-mD4q9oMn7bAL3efR~SivEmS9oFceXlyFJnMI-zP~a5yPqeFYRM2NK1zslRe3slua6h6mjfQEBzKK7IJVBlpzEEC2bcPzE6MrBV-WQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
       Herotext: "Empowering the Future of Agriculture with Modern IT Solutions",
 
       Subtext:
@@ -953,7 +957,8 @@ export function ButtonSelecter() {
     },
     {
       ExpandedModel: "Data Science Solutions",
-      pic: DataScienceSolutionspic,
+      // pic: DataScienceSolutionspic,
+      pic: "https://s3-alpha-sig.figma.com/img/37d0/31de/d752a9542511e5aae864b9797046e1cb?Expires=1691366400&Signature=hDoTPrcRUGjPVAvvO0eI1CKnYDCuX73Oeew7QNx4ThPQ8vbYFq00gjg-6H43YB7HwhUXxgS2n58YAen0b3JOADGDliDul0SSqLBEMhujwpGDzfai2VUv9ElSlN9WsijWe7uJRPIpvCsi3QQomjNIJLC2jMTNAu6radQSfjEvCklEjTodbFU1XVfhJqP8iRD4xJ2sQVZpQ0~gSFEPhp3rI6W8PIXK72jqjU~4ZtDBwXFZqXQue8cak975lJgX0XYZA72oqLKI6i9gpF0KA6r0GtYNgAE4o3-dlVP~SSATR8t0Jvs3B0hi9lbQIpdRc4ElpGIw~mk5IAgHdbuL-aLqwA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
 
       Herotext: "Smart Data. Smarter Decisions",
 
@@ -990,7 +995,8 @@ export function ButtonSelecter() {
     },
     {
       ExpandedModel: "Business Analytics",
-      pic: BusinessAnalyticspic,
+      // pic: BusinessAnalyticspic,
+      pic: "https://s3-alpha-sig.figma.com/img/2f4f/067d/1350e02791b5ebb8ac504d3da370dc84?Expires=1691366400&Signature=Jb0jnabzYWHnpw9XysGgh1sgQBSgOw68X9qdomHot4pKDjKGZFAeGFA1L2b3KrCVPnIJfqqGJ0jFuB1zDk44wBrsP0-p06acYR0o7oXuqwRJ1fMqpCJQwRz1AETEFTD6Bbu5p9B-bFQmxMPI84J6zRDoJmgMDjwQtcylLx0gVyYMdqpr0dBD-h-hEzgPrEmg0SmbA7B0ZGFHbFUvxh~bO5KQSfwM2Nrfba46eQ37L5bWttZBqn5sHAPP4mmGrp3NK5R2enh8g8sq8nD4pktWTw0ZzlJKi4dQtIOP6sk8koC3LeDU96lHGDaxiXHT0oSbI667sH2jwGVOmAL-k4MW2w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
 
       Herotext: "Make smarter business decisions with our analytics solutions",
 
@@ -1106,7 +1112,12 @@ export function CommonSelectedExtendedPage({
     <div className="p-2 m-1">
       <div className="row p-4 m-3">
         <div className="col-5">
-          <img src={pic} alt="" height={"540px"} />
+          <img
+            src={pic}
+            className=" img-fluid p-2 mx-2"
+            alt=""
+            // height={"540px"}
+          />
         </div>
 
         <div className="col">
