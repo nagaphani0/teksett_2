@@ -554,7 +554,7 @@ function HomeWhatWeDo() {
                   onMouseLeave={() => handleExit(index)}
                   style={{
                     color: bol ? "#0F46F5" : "#000",
-                    opacity: "0.199011612",
+                    // opacity: "0.199011612",
                     padding: "8px",
                     marginTop: "70px",
                     marginLeft: "0px",
@@ -562,7 +562,7 @@ function HomeWhatWeDo() {
                   }}>
                   {title}
                 </div>
-                <div className="col-sm-1 col-md-2">
+                <div className="col-sm-1 col-md-2 d-none d-md-block">
                   {bol ? (
                     <img src={pic} className="" alt="none" height={"149px"} />
                   ) : (

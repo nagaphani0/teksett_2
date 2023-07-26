@@ -17,9 +17,6 @@ git add . | git commit -m 'second' | git push master
 
 git pull origin master 
 
-
-
-
 from gitpod
 from vscode.dev always 
 from pc vs
