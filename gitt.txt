@@ -17,11 +17,7 @@ git add . | git commit -m 'second' | git push master
 
 git pull origin master 
 
-
-naga from vs from desk gitpod 
-from gitgub
+ 
 from gitpod
 from vscode.dev always 
-from code space
-
 from pc vs
