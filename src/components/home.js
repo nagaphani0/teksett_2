@@ -562,7 +562,7 @@ function HomeWhatWeDo() {
                   }}>
                   {title}
                 </div>
-                <div className="col-sm-1 col-md-2 d-none d-md-block">
+                <div className="col-md-2 d-none d-md-block">
                   {bol ? (
                     <img src={pic} className="" alt="none" height={"149px"} />
                   ) : (
