@@ -22,3 +22,4 @@ naga from vs from desk gitpod
 from gitgub
 from gitpod
 from vscode.dev
+from code space
