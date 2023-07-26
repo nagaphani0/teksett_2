@@ -20,7 +20,6 @@ import rightarrow from "../images/rightarrow.png";
 import homefrentback from "../images/homefrentback.png";
 import homefrentpage from "../images/homefrentpage.png";
 // import { Col, Row } from 'react-bootstrap';
-import secondhome from "../images/2home.png";
 import one from "../images/sysfacts-work-environemnt-0.jpg.png";
 import two from "../images/sysfacts-work-environemnt-12-1.jpg.png";
 import three from "../images/sysfacts-work-environemnt-3.jpg.png";
@@ -460,7 +459,8 @@ function HomeWhoWeAre() {
       />
 
       <img
-        src={secondhome}
+        // src={secondhome}
+        src="https://s3-alpha-sig.figma.com/img/89d9/1f32/94d05c6eb053cc056840f7c29c39acfc?Expires=1691366400&Signature=a4PTMhmcQPPuAYRJWCnclVscM9PAsorIXTGhboOpJtry9Rr-qH4kew2c9y7o5~-6shVXHEBA8ojoLEGlngzAP1rCqB6p1mRDb8ywyQLuIO7RsXXWcIUuMtoHTFOG5ZKgF2Y~m5kdjOd6aRjTQReom5y~VjX3E8lSLUpjQ1UFN5nK~VS9at9jWdmJPnj-wPrv-Q6KVKV~XlsYvbllmkDplQH~UbcvhxUXH4L0vnB3U3u~icxt3TOTNs3mcyC2-eI7vpsHCk7gyuGa8Ai-uzzK38kA5odCONLdViutOg5x9WQ9SsoMKCngjHQx7U0nJIxERZsXFac0oe7LYlps3Rxi7w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
         alt=""
         className="img-fluid m-3 p-3"
         style={
@@ -614,34 +614,38 @@ function HomeWhyTeksett() {
   const data = [
     {
       vid: video1,
+      // vid: "10uH5oun3UjOhoRZPRBvM_i1vcGh0Mi1a",
       title: "Exceptional Expertise",
       des: "Our skilled team of IT professionals delivers top-notch solutions tailored to your unique business needs.",
     },
     {
       vid: video2,
+      // vid: "1XX_IdlOXe5xuAOI8rTa4urq-Q5fOwf9k",
       title: "Client Satisfaction",
       des: "Our commitment to customer satisfaction ensures exceptional service delivery and long-term partnerships.",
     },
     {
       vid: video3,
+
+      // vid: "16h3cmcD17TsQG-iU-bnYOS2ZKOhirNcz",
       title: "Cutting-Edge Technology",
       des: "We leverage the latest technologies to empower your business with innovative solutions that stay ahead of the curve.",
     },
     {
       vid: video4,
+      // vid: "1n5fm1osvPiLS6DO0KO1xYUzAKu45Ihze",
       title: "Client-Centric Focus",
       des: "We prioritize understanding your objectives, providing personalized IT solutions that drive your success.",
     },
-    {
-      vid: homevid,
-      title: "default",
-      des: "We prioritize understanding your objectives, providing personalized",
-    },
   ];
   const [dataa, setDataa] = useState("Exceptional Expertise");
-
-  const playVideoOF = data.filter(({ title }) => title === dataa)[0].vid;
-  console.log("playing Video OF", playVideoOF);
+  var playVideoOF = homevid;
+  if (dataa) {
+    playVideoOF = data.filter(({ title }) => title === dataa)[0].vid;
+    console.log("playing Video OF", playVideoOF);
+  } else {
+    console.log("playVideoOF is", playVideoOF);
+  }
 
   return (
     <MyVidContext.Provider value={[dataa, setDataa]}>
@@ -656,15 +660,20 @@ function HomeWhyTeksett() {
         />
 
         <div
-          className="row d-flex flex-column"
+          className="row"
           // style={{ padding: '120px', margin: '30px' }}
         >
-          {playVideoOF === "default" ? (
-            <div className="col-6 d-none d-md-block d-xl-block">
-              <img src={homevid} alt="Default Image" />
-            </div>
-          ) : (
-            <div className="col-6 d-none d-md-block d-xl-block">
+          (
+          <div className="col-5 d-none d-md-block d-xl-block py-3 mx-3">
+            {dataa === false ? (
+              <img
+                src={homevid}
+                alt="no"
+                className="img-fluid w-75 p-3 m-4"
+                // height={"150px"}
+                // width={"150px"}
+              />
+            ) : (
               <video
                 className="video"
                 width="500"
@@ -673,24 +682,63 @@ function HomeWhyTeksett() {
                 autoPlay
                 muted
                 preload="auto">
-                <source src={playVideoOF} type="video/mp4" />
+                <source
+                  src={playVideoOF}
+                  // src={`https://drive.google.com/uc?id=${playVideoOF}&export=download`}
+                  type="video/mp4"
+                />
               </video>
-            </div>
-          )}
-
-          <div className="col-5"> </div>
-
-          {/* <div className="col-1">
-            <svg width="11" height="550" viewBox="0 0 11 761" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="1" height="760" transform="translate(5.48438 0.96875)" fill="#494949" />
-              <rect x="0.984375" y="0.96875" width="10" height="10" rx="5" fill="#0F46F5" />
-              <rect x="0.984375" y="188.469" width="10" height="10" rx="5" fill="#0F46F5" />
-              <rect x="0.984375" y="375.969" width="10" height="10" rx="5" fill="#0F46F5" />
-              <rect x="0.984375" y="563.469" width="10" height="10" rx="5" fill="#0F46F5" />
+            )}
+          </div>
+          {/* <div className="col-5"> </div> */}
+          <div className="col-1 m-5 m-md-1 p-5 p-md-1">
+            <svg
+              width="11"
+              height="550"
+              viewBox="0 0 11 761"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <rect
+                width="1"
+                height="760"
+                transform="translate(5.48438 0.96875)"
+                fill="#494949"
+              />
+              <rect
+                x="0.984375"
+                y="0.96875"
+                width="10"
+                height="10"
+                rx="5"
+                fill="#0F46F5"
+              />
+              <rect
+                x="0.984375"
+                y="188.469"
+                width="10"
+                height="10"
+                rx="5"
+                fill="#0F46F5"
+              />
+              <rect
+                x="0.984375"
+                y="375.969"
+                width="10"
+                height="10"
+                rx="5"
+                fill="#0F46F5"
+              />
+              <rect
+                x="0.984375"
+                y="563.469"
+                width="10"
+                height="10"
+                rx="5"
+                fill="#0F46F5"
+              />
             </svg>
-          </div> */}
-
-          <div className="row d-flex m-4 p-3">
+          </div>
+          <div className="col row d-flex">
             {data.map(({ title, des, bol }) => (
               <VideoOnHover key={title} title={title} des={des} bol={bol} />
             ))}
@@ -698,17 +746,17 @@ function HomeWhyTeksett() {
         </div>
 
         <div
-          className="justify-content-center p-2 m-5 row d-flex "
+          className=" container px-5 mx-md-5 row d-flex "
           // style={{ padding: '40px', margin: '60px' }}
         >
           {[
             { num: "80+", text: "Satistied Customers" },
-            { num: "95", text: "Completed Projects" },
-            { num: "200", text: "Team Members" },
-            { num: "10", text: "Worldwide locations" },
+            { num: "100+", text: "Peojects in 26 Years" },
+            { num: "200+", text: "Team Members" },
+            { num: "10+", text: "Industry Verticals" },
           ].map(({ num, text }) => (
             <div
-              className="col text-white m-2 p-3"
+              className="col text-white m-1 px-md-4 py-md-2"
               style={{
                 background: "rgba(230, 230, 230, 0.10)",
                 // width: '218px',
@@ -719,12 +767,12 @@ function HomeWhyTeksett() {
               <div
                 className=""
                 style={{
-                  fontSize: "65px",
+                  fontSize: "62px",
                 }}>
                 {num}
               </div>
               <div
-                className=""
+                className="p-1"
                 style={{
                   fontSize: "15px",
                 }}>
@@ -741,26 +789,35 @@ function HomeWhyTeksett() {
 function VideoOnHover({ title, des }) {
   // const [open, setOpen] = useState(false);
   const [dataa, setDataa] = useContext(MyVidContext);
-  console.log(dataa);
+  // const [glow, setGlow] = useState(false);
+
+  function onEnter() {
+    setDataa(title);
+    // setGlow(true);
+  }
+  function onLeve() {
+    setDataa(false);
+    // setGlow(true);
+  }
 
   return (
-    <div
-      onMouseEnter={() => setDataa(title)}
-      onMouseLeave={() => setDataa("default")}>
-      <div className="" key={title}>
+    <div onMouseEnter={onEnter} onMouseLeave={onLeve}>
+      <div className="p-0" key={title}>
         {/* {
-          open ? 
+          open ?
         } */}
 
-        <div className="col-6">
+        <div className="col-md-5 col-8 p-3 m-3 m-md-0  p-md-0">
           <div
             className=""
-            style={{
-              paddingLeft: "0px",
-              marginBottom: "59px",
-              marginLeft: "0px",
-              marginTop: "0px",
-            }}>
+            style={
+              {
+                // paddingLeft: "0px",
+                // marginBottom: "59px",
+                // marginLeft: "0px",
+                // marginTop: "0px",
+              }
+            }>
             {/* <div className="">
 
               <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -771,19 +828,19 @@ function VideoOnHover({ title, des }) {
             <div
               className=""
               style={{
-                color: "#FFF",
+                // color: `${glow ? "#FFF" : ""}`,
+                color: "#fff",
                 fontSize: "22px",
                 fontWeight: "30px",
               }}>
               {title}
             </div>
             <div
-              className="col-9"
+              className="col"
               style={{
                 color: "rgba(112, 112, 112, 1)",
                 fontSize: "11px",
               }}>
-              {" "}
               {des}
             </div>
           </div>
@@ -802,7 +859,12 @@ function HomeTestimonials() {
       />
       <div className="row d-flex bg-black">
         <div className="col-7 p-0">
-          <img src={homegirl} className="img-fluid" alt="none" />
+          <img
+            src={homegirl}
+            // src="https://s3-alpha-sig.figma.com/img/77c6/4a50/99fe347da26dc05058b4f234d1c87b39?Expires=1691366400&Signature=komz~clxkqPpkZTe1D0FUX-u0XQ2L1w0oHwp28mGlYpRP1eQTsXYiuD7T~C0op2Gs72zj9Bzq~hNG5xl4va0anCFReHSMq~jNYTC4FjJbDAB-SaV31Ea5OOvfNcj4u-phF4xjRXLgQjT5eABPrDF5EWxZa8UBkFNqUORkUpZ7hfAJz82HR1sOMdVu6SHXIs2~prdXXCbI9LmJguXqcKD9HTviKQOl5o8rRmzHWQeGTTFwsyG30xQNC05AMd28tbFQIW~jUjf5FB8frCaPKGia9paMl3rzbE0HGg2WoFFqyp7vamJqolfEKdUOEqmGYqadD1THZPZYHcTRz6wpAnUBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            className="img-fluid"
+            alt="none"
+          />
         </div>
         <div className="col ">
           <div className="">

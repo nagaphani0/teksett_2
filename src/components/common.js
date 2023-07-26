@@ -1,15 +1,5 @@
 import { useState, useEffect } from "react";
 import rightarrow from "../images/rightarrow.png";
-import s1 from "../images/sponsers/DWA_Logo_invertiert-1.png.png";
-import s2 from "../images/sponsers/Deutscher-Bundestag.svg.png";
-import s3 from "../images/sponsers/MEKU_Technologie.png.png";
-import s4 from "../images/sponsers/Modefachschule-Sigmaringen.svg.png";
-import s5 from "../images/sponsers/Prestohumus-Naturlich-Nachhaltig.svg.png";
-import s6 from "../images/sponsers/Schnittger-Architekten-Partner.svg.png";
-import s7 from "../images/sponsers/Start-NRW.svg.png";
-import s8 from "../images/sponsers/Themas-Krenn.svg.png";
-import s9 from "../images/sponsers/Zeppelin-Luftschifftechnik.svg.png";
-import s10 from "../images/sponsers/Zwilling-J.A.Henckels.svg.png";
 import { Link, useParams } from "react-router-dom";
 import HEALTHCAREpic from "../images/extenddedhelth.png";
 import TELECOMMUNICATIONpic from "../images/industries/extended/Telecom.png";
@@ -28,14 +18,7 @@ import DataScienceSolutionspic from "../images/services/extended/datasciencedov.
 import BusinessAnalyticspic from "../images/services/extended/Business Analytics.png";
 import ProjectManagementpic from "../images/services/extended/productmanagement.png";
 
-export default function CommonIS({
-  pic,
-  title,
-  des,
-  points,
-  mainlin,
-  extendedlin,
-}) {
+export default function CommonIS({ pic, title, des, points, mainlin }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -272,8 +255,22 @@ export function CommonPageHead({ page, title }) {
   );
 }
 
-export function Sponsers() {
-  const sponsers = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
+export function Sponsers({ co }) {
+  const sponsers = [
+    "https://s3-alpha-sig.figma.com/img/cf6f/a85d/e82a601c82e3a8308f145555e6b17235?Expires=1691366400&Signature=bcbC8ZsiG4uPpl4EkdNQcUbo70IYzIj9uyxP39bsI3IGR-v78q8DKwdZt-~fmwUSajTuk3klf0kREuVfntmae~CFtsqf6oZKWxjI3XYkH~DA0Z2L4NCUVBXxejI51310SdZginJroeF93pp00W-LVLP0mk2OqSvI0JRmBgOzyJr1ZPJNhzS5prTu~CGJ1JW~ZC1GuheJgMG2WbmqHTOatzIKHpYvkPZ1qwKkH9n2hamISe0fDxf~avnsbF5AyGibWjIq18CoJU~aJkP3br5vdVOHao~mjQDc-kYPWKHasl3A1kK2WyEChR4DJCGF6RKCNJUkt63VZ6-nkbK0BAKt4w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/adc1/2c8e/575610c2a7178b8fb8f717282cea8a44?Expires=1691366400&Signature=IrROEklXDvJp4T093E2dqPwQLVDN2nTKa58fAGIbU5KeS7y7vGKRgGFzDuC5h7ndanEs78bW18UbMW6zoJ-EfLJyiQQOac0niKlNEp6dgZvZyX4v0Bxft38RxSmv5B-xlCmvw33m~CXymoXZEx5T6f3E6nXq5~tHVlg8~2z86qlVLed3COiR6VJUZcPRcC~idVRUztoMQ28Tzz-z6nXw1ec6C1ssUxUwfl-RIhHSK74f4CcOFk4ZurP2B6XkzbjvYHajCcgz~yoqOdzEfk65IWOZiPISIwogm5mMai3AtIjj-LjegqSV9xKb8KEmC8UkhOLcvONs7DLtwpLRipEtZw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/720b/3fa2/73ff3e798162e31f8c92c7bc1de25f3d?Expires=1691366400&Signature=jaJpkYwPqK9HABLnoalxXKqhvzSC8sHJdF4B-tP~AxGDpezr9zNV4ZbrWmCEw0H11f0fHuMFTgka5Um54C1PJaBsEX4XUy4axYlgoE3MzjCWYdIGcsSmSPa2tr60IHK3BxICZ2CzAHAf7gA6wu8r~7R0P~P-YYuGQ2QV1yCXxct-Eu6GvTsgRjA7wvrk55BRy-BsncvUHfHt2RGTf6lqcRS6nb3MMQDpWVG8a1lnSNBTIKTbd1mNsZKWcEx6QImFHSRJ4UpTDcZ6pC39dE-rO78x4HnBEZkhnU9FSY0Wi3qDtXZ2lM2p8Kb40ZgHjdQF90pOIzcMD5sZpzWi8sGLpw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/3a11/acb3/2d5b93d19aaecd21ea52a1a63b9c6cfe?Expires=1691366400&Signature=hBWZtUsAwJL7jS7Cait2XqmeguG0pp5kv4xj6gkL-t4xN6spFy7Wbu7GpgONuDiCw8g-cotMh0Ip8OT9dA1cFmzmQsTOarbfJTteyN8jbrfUGrnytjDqoH1mYiyQZHWzdpcHMJWRxzUCtUyqKmu1ekoMRdsMe4bvI06t9HwHx44UcjKeZ4v~eQVLKFMHGKtKeH2AK6aKz0MM2f2pieRQaF-gbWiH87~KYO7h5y8ltdDwU4xiUZyw4T2zJe4CMULYTQEYLPCZtYr9lpqI-bYinFP5c1AWd1JWKFxJvb38Mc76IDiTcAcxlapDiX536yPCXxJdkQ4Ox7f-SEg8nRt5~w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    // s4,
+    "https://s3-alpha-sig.figma.com/img/fdee/fe4b/227fda0ba1f628e56a460d61469387a8?Expires=1691366400&Signature=GDdttwpNT6jtWXikQAKN4vNu6i1IK-lkEf37BXEh2WBaSVxYjv3KUI8zsI~SHKuzZ~l51yRIhaR1iPnr8VlQxtRHvbAtcErm6cmoQyeRO6aSgisljRh22kCkhLIJPtAoNrRNVzkuTLi79bwhwWzIUiurGQFpelUUMU3FEqc~Tp2xxtUKAr0q5556XGACkx6Th~fjI9KF4Ysa8Ev32KvyYM3onkPT1ANc-20zSdYQ9zR~WzLHIA8LUbnulef2BIB7-SSEUuFlOuk2DTPgw7T3Qgl2k0LaIYffK7yshGuzmEmsJDixKVjLsSf1tgy~Z6xWsKNP2yH7h7X1PElfOPojRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/8f66/0565/3711481788dcde4111bb6b7d47ccb226?Expires=1691366400&Signature=DddR9EPAaQgx2mwrl6kADziNAHIpcRgB~o5aVB~0Ds~zOqbI7EKcfWTGn02fV94bIPHz2~2OBl-KmZlKj7S-HFKCe1~UKADsbwkf8j5pj9CqJwf5w6~BmnB6Fe0lLoAy~rAU9vV8tL4foswLVobDybXA6C7vxvHR0gwCyc-PGjzft79sToC1SFvqnfRRj7wUfb7V4cnCJ3Ikp4Ld8ygUelAhuAtOUoRMOyNGmS0ja2cu0uXR3VE15aOdughbeOznlobTCn5PDA6a4KDLpTsP6tK97m4WXB~z-XY5GyUsoqzbcXmjRxSRiOsW7t~AkM28XYlT35F9z~ftEP1UE8Fe7A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/231b/799c/e7e9fbe2e5ca4ece7e482f88d29cdae8?Expires=1691366400&Signature=KwTcZkm5MwJHBRdtzUAhWudapwqlp6KH2rWds5w-3ur4uQ~Vi-v4iayhfMX7EnQodiHfcathKLoT~-atqcPFyfcQ-3l72hpLGeLpouEL3AvSy8vs6vHSDu2p3sVsL4bKNMoFLD3Bf35QCYCqUPjwiuVkZVsIQtX7mgQIkHlHOgE~ow2ZteZql12cFfKpY5r8RcXGy5WYOGduYYFoWz6aTcc95jT7MugdxVq~iPL64bK0YwnbpCh86bvZegZaEG2q7gOsPu4P~X40gJZIbJnSqcu9xQqraTb5uU3HDgFVsDFTLzSgi6HNTS2Qqlam3Yg-eWCRN8oAoh6C4GIm4g15Ng__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/e74a/cfbe/719e3966783d202088e716811f28b717?Expires=1691366400&Signature=g-2fSGUt1gCIyh3d0w9eEV-vqfhX6ZBKTKcfJauTHwJg37~P0M8hgTNLnq7zn-uWbUL36D9DkzbjB-ijrOgbfLkyVzk5pHMePWkCte8bDb15YrcNFnpxVw66wKIh1iM938P82l57JTmuDy0m478DvvfBoG9SYHdF6N0F7R3jjG8~rRIprDy8QIfiBoWIvpMphlS8pSUDL2okkFcw33q~WcGBzvF61q0vU8SXEu9KZ5~jSeAN6XnGW3OcfI9vNfBYdIMKWPiJPet4eGXoIeyKpopddZi0gTObNfC8cDC9YaSF4dryKFIu~-GmJo3cAyD-2pmF1ruPUTUfgfo7YqxVyw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/cca6/b7bc/767cc6a6dd43df0b407b26b97e54ffcc?Expires=1691366400&Signature=HzxYlCElcYRSqGomuLi0n~h6uz7JdsxJUKiJUryHXi7QFfvKeyoPLpSmLh4RKXuk~3Ruvqf~Kv5O5C5tBHbKLDbgDsz9rpzb2Zi2ZN~1-He6vuUyqu-Pd84yt4ycO-UnXMNfWxhcOXWxOSscq8sjGQWLne2vPyiLv0NM4j05XB8~LAkbVkd4KvIwb0TLwiEe3aMBLmiSUIeNlBYXVFQJa4EFJd4yhTKuPhEQhnsVw~2gBLiJs5XDuLkVtP0oFYpDc0157ELcbayzD163falaRtXoh5ekdcN38~JS8L2CgfnE3S4tScz-izRtAu2647GEBtdUdhLepoMQphg8CpteAA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    "https://s3-alpha-sig.figma.com/img/df1c/43e4/26d287669c6f0dbfb6d55c5a39c766d8?Expires=1691366400&Signature=H-gY1VTpRDo1055lf4qtMSVIScPcGJ1QEzrpOyGvM5dqHIZNRPLtJubL5KrE04TmsO-1HhTeqxbT2B0X9v3WE1xdyMWLJ9543kaOWimBslpF5xu-WE4TTnP8GjeuxVpfN5RROsBeJreakfLFQcvDgF-z3dsgqs9iQuaSo0PJfnGorhRo8QGfffgf9FxxCqxIj47AVeTom26m65N5AlCXD36Mn6HjJ8FxpK4AtDpqZckoU6cgNsTpvkVKnwwN70fpjaF~Ct6Llg1MXKi-Srag9E~LguVSLfBQz5ifCdy8Uv6G-0vtIkLiUb5iHucIpDSdbYS96oRe8C~Zb8YWp~W4ew__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+  ];
+
+  // const sponsers = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
   const [displayedSponsors, setDisplayedSponsors] = useState([]);
 
   useEffect(() => {
@@ -296,10 +293,28 @@ export function Sponsers() {
   }, []);
   return (
     <div>
-      <div className="row d-flex flex-row">
-        {displayedSponsors.map((pic) => (
-          <div className="col" style={{ padding: "10px", margin: "7px" }}>
-            <img src={pic} alt="none" style={{ height: "40px" }} />
+      <div className={`row d-flex ${co ? " bg-black" : ""}`}>
+        {displayedSponsors.map((pic, index) => (
+          <div
+            key={index}
+            className={`img-container ${co ? `col-5` : "col"} p-3 m-2`}>
+            <img
+              className="img-fluid "
+              src={pic}
+              alt="none"
+              style={{
+                width: "164px",
+                height: "56px",
+                flexShrink: 0,
+                // height: "50px", // Set the desired height for the images
+                // width: "60px", // Set the desired width for the images
+                filter: "grayscale(100%)",
+                objectFit: "fill",
+                ...(pic.width < 700 || pic.height < 200
+                  ? { height: "200px", width: "200px" }
+                  : {}),
+              }}
+            />
           </div>
         ))}
       </div>
@@ -335,18 +350,15 @@ export function CommonPlusOpen({ question, Answer }) {
           </defs>
         </svg>
       </div>
-      <div
-        className="col m-3  "
-        style={{ fontSize: "18px", fontWeight: "500" }}>
+      <div className="col m-3" style={{ fontSize: "18px", fontWeight: "500" }}>
         {question}
       </div>
       {open ? (
-        <div className="" style={{ margin: "14px", marginLeft: "90px" }}>
-          {" "}
+        <div className="" style={{ marginTop: "0px", marginLeft: "90px" }}>
           {Answer}
         </div>
       ) : (
-        ""
+        " "
       )}
       <hr />
     </div>
