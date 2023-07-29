@@ -29,15 +29,12 @@ import homevid from "../images/vid.png";
 import homegirl from "../images/homegirl.png";
 import image6 from "../images/image 6.png";
 import { CommonLastInPage } from "./about";
-import last1 from "../images/homelastcards (2).png";
-import last2 from "../images/homelast (2).png";
-import last3 from "../images/homelastcards (4).png";
-import last4 from "../images/homelastcards (3).png";
 import scale from "../images/scale.png";
 import video1 from "../images/home/whytess/exceptional expertise.mp4";
 import video3 from "../images/home/whytess/Client satisfaction.mp4";
 import video2 from "../images/home/whytess/Client focused.mp4";
 import video4 from "../images/home/whytess/Cutting Edge technology.mp4";
+import styled from "styled-components";
 
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -47,13 +44,32 @@ export default function Home() {
   return (
     <div>
       <HomeFrentPage />
-      <Sponsers />
+      <div className="row my-2">
+        <div
+          className="col-3 col-md-1 px-4 my-2"
+          style={{
+            color: "#707070",
+            fontFamily: "Space Grotesk",
+            paddingTop: "10px",
+            fontSize: "11px",
+            fontStyle: "normal",
+            fontWeight: "400",
+            lineHeight: "19.6px" /* 140% */,
+            letterSpacing: "-0.2px",
+            textTransform: "uppercase",
+          }}>
+          Our Clients
+        </div>
+        <div className="col">
+          <Sponsers />
+        </div>
+      </div>
       <HomeWhoWeAre />
       <HomeWhatWeDo />
       <HomeWhyTeksett />
       <HomeIndustries />
       <HomeTestimonials />
-      <FeedBack />
+      <FeedbackCarousel />
       {/* <HomeLast2nd /> */}
       <HomeBlogsArticles />
     </div>
@@ -161,6 +177,7 @@ function HomeBlogIntro({ model, title, des, black, extra, bigdes, insights }) {
             style={{
               color: black ? "#FFF" : "#161616",
               fontSize: "43px",
+
               letterSpacing: "-1px",
               fontStyle: "normal",
               fontWeight: 400,
@@ -270,20 +287,23 @@ function HomeBlogIntro({ model, title, des, black, extra, bigdes, insights }) {
   );
 }
 
-function FeedBack() {
+const FeedbackCarousel = () => {
   const feedbackks = [
     {
       pic: aws,
+      role: "James Tjan (Entrepreneur)",
       man: awsman,
       des: "I recommend Teksett because of their agile way of working and focus on achieving top-notch quality of the product. Communication in the project was clear and effective.",
     },
     {
       pic: accen,
+      role: "James Tjan (IT Manager)",
       man: accenman,
       des: "I recommend Teksett because of their agile way of working and focus on achieving top-notch quality of the product. Communication in the project was clear and effective.",
     },
     {
       pic: bee,
+      role: "James Tjan (CIO)",
       man: beeman,
       des: "I recommend Teksett because of their agile way of working and focus on achieving top-notch quality of the product. Communication in the project was clear and effective.",
     },
@@ -295,31 +315,58 @@ function FeedBack() {
   ];
 
   return (
-    <div className=" container">
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={50}
-        slidesPerView={3}
-        navigation
-        // pagination={{ clickable: true }}
-        // scrollbar={{ draggable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log('slide change')}
-      >
-        {feedbackks.map(({ pic, man, des }) => (
-          <SwiperSlide>
-            <div className="row">
-              <div
-                key={pic}
-                style={{ padding: "px", margin: "0" }}
-                className="col-4">
-                <div>
-                  <img
-                    src={pic}
-                    alt=""
-                    className="col p-3 m-4"
-                    height={"70px"}
-                  />
+    <div className="container my-5 d-none d-md-block">
+      <div className="swiper-container d-flex">
+        <div className="d-flex justify-content-center align-items-center">
+          <div
+            className="btn p-2 m-1 swiper-button-prev"
+            style={{
+              borderRadius: "4px",
+              border: "1px solid #707070",
+            }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="16"
+              viewBox="0 0 22 16"
+              fill="none">
+              <path
+                d="M12.7477 15.9961L13.9102 14.848L6.98234 8.00602L13.9102 1.15243L12.7477 0.00433551L4.65743 8.00602L12.7477 15.9961Z"
+                fill="#707070"
+              />
+              <path
+                d="M8.41567 15.9961L9.57812 14.848L2.63858 8.00602L9.57812 1.15243L8.41567 0.00433551L0.31368 8.00602L8.41567 15.9961Z"
+                fill="#707070"
+              />
+              <path
+                d="M9.57694 8.81763L22 8.81763L22 7.1941L9.57694 7.1941L9.57694 8.81763Z"
+                fill="#707070"
+              />
+            </svg>
+          </div>
+        </div>
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={50}
+          slidesPerView={3}
+          className="m-3"
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}>
+          {feedbackks.map(({ role, man, des }) => (
+            <SwiperSlide key={role}>
+              <div className="row">
+                <div className="col-md-4 ">
+                  <div className="d-flex py-4 my-1">
+                    <div>
+                      <img src={man} alt="none" height="50px" />
+                    </div>
+                    <div className="px-3">
+                      <div style={{ width: "200px" }}>{role}</div>
+                      <div style={{ width: "150px" }}>Product Manager</div>
+                    </div>
+                  </div>
                   <p
                     className="col"
                     style={{
@@ -328,61 +375,76 @@ function FeedBack() {
                       fontSize: "20px",
                       fontStyle: "normal",
                       fontWeight: "300",
-                      // lineHeight: '41.2px',
-                      // letterSpacing: '-0.1px',
                       width: "300px",
                     }}>
                     {des}
                   </p>
-                  <div className="p-2 m-2">
-                    <div>
-                      <img src={man} alt="none" height={"50px"} />
-                    </div>
-                    <div className="" style={{ width: "150px" }}>
-                      Product Manager
-                    </div>
-                  </div>
                 </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
-        {/* <div className="swiper-button-next"><button>prev</button></div>
-        <div className="swiper-button-prev"><button>next</button></div> */}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="d-flex justify-content-center align-items-center">
+          <div
+            className="btn p-2 m-1 swiper-button-next"
+            style={{ borderRadius: "4px", border: "1px solid #707070" }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="16"
+              viewBox="0 0 22 16"
+              fill="none">
+              <path
+                d="M9.25231 0.00390625L8.08984 1.15198L15.0177 7.99398L8.08984 14.8476L9.25231 15.9957L17.3426 7.99398L9.25231 0.00390625Z"
+                fill="#707070"
+              />
+              <path
+                d="M13.5843 0.00390625L12.4219 1.15198L19.3614 7.99398L12.4219 14.8476L13.5843 15.9957L21.6863 7.99398L13.5843 0.00390625Z"
+                fill="#707070"
+              />
+              <path
+                d="M12.4231 7.18237H0V8.8059H12.4231V7.18237Z"
+                fill="#707070"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 function HomeFrentPage() {
   return (
     <div className="">
       <div
-        className=""
+        className="vh-100"
         style={{
           backgroundImage: `url(${homefrentback})`,
-          height: "120vh",
-          width: "210vh",
         }}>
-        <div className="d-none d-md-block">
+        <div className="d-none d-md-block d-xl-block position-relative ">
           <img
             src={homefrentpage}
             alt=""
             style={{
-              position: "absolute",
-              left: "850px",
-              top: "80px",
+              // position: "absolute",
+              // left: "850px",
+              // top: "80px",
               width: "auto",
               height: "600px",
               flexShrink: "0",
             }}
-            className="float-end"
+            className="position-absolute top-0 end-0 px-4 m-3"
           />
         </div>
 
         <div
           className=""
-          style={{ position: "absolute", top: "300px", left: "100px" }}>
+          style={{
+            position: "absolute",
+            top: "300px",
+            left: "100px",
+          }}>
           <div
             className=""
             style={{
@@ -395,7 +457,7 @@ function HomeFrentPage() {
             Your Reliable IT Partner
           </div>
           <div
-            className="col-sm-10 col-md-6"
+            className="col-sm-10 col-md-7"
             style={{
               color: "#161616",
               fontSize: "55px",
@@ -403,7 +465,8 @@ function HomeFrentPage() {
               lineHeight: "60px",
               // letterSpacing: '-1.2px'
             }}>
-            Modern IT solutions to scale your Business
+            <span style={{ color: "#707070" }}>Modern IT solutions {"  "}</span>
+            to scale your Business
           </div>
           <div className="row">
             <div
@@ -650,136 +713,132 @@ function HomeWhyTeksett() {
   return (
     <MyVidContext.Provider value={[dataa, setDataa]}>
       <div className="bg-black">
-        <HomeBlogIntro
-          title={"Experience Top-Notch IT Solutions with Teksett"}
-          model={"Why Teksett"}
-          des={
-            "Partner with Teksett for trusted, top-notch IT solutions that deliver excellent results tailored to your business needs."
-          }
-          black={true}
-        />
+        <div className="">
+          <div className=" container-fluid">
+            <HomeBlogIntro
+              title={"Experience Top-Notch IT Solutions with Teksett"}
+              model={"Why Teksett"}
+              des={
+                "Partner with Teksett for trusted, top-notch IT solutions that deliver excellent results tailored to your business needs."
+              }
+              black={true}
+            />
+          </div>
 
-        <div
-          className="row"
-          // style={{ padding: '120px', margin: '30px' }}
-        >
-          (
-          <div className="col-5 d-none d-md-block d-xl-block py-3 mx-3">
-            {dataa === false ? (
-              <img
-                src={homevid}
-                alt="no"
-                className="img-fluid w-75 p-3 m-4"
-                // height={"150px"}
-                // width={"150px"}
-              />
-            ) : (
-              <video
-                className="video"
-                width="500"
-                height="360"
-                controls
-                autoPlay
-                muted
-                preload="auto">
-                <source
-                  src={playVideoOF}
-                  // src={`https://drive.google.com/uc?id=${playVideoOF}&export=download`}
-                  type="video/mp4"
+          <div
+            className="row"
+            // style={{ padding: '120px', margin: '30px' }}
+          >
+            (
+            <div className="col-5 d-none d-md-block d-xl-block py-3 mx-3">
+              {dataa === false ? null : ( // /> //   // width={"150px"} //   // height={"150px"} //   " //   w-75 p-3 m-4 //   className="img-fluid //   alt="no" //   src={""} // <img
+                <video
+                  className="video"
+                  width="500"
+                  height="360"
+                  controls
+                  autoPlay
+                  muted
+                  preload="auto">
+                  <source
+                    src={playVideoOF}
+                    // src={`https://drive.google.com/uc?id=${playVideoOF}&export=download`}
+                    type="video/mp4"
+                  />
+                </video>
+              )}
+            </div>
+            {/* <div className="col-5"> </div> */}
+            <div className="px-5 mx-2 col-1 col-md-1 d-md-flex justify-content-md-center  ">
+              <svg
+                width="11"
+                height="550"
+                viewBox="0 0 9 690"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect
+                  width="1"
+                  height="760"
+                  transform="translate(5.48438 0.96875)"
+                  fill="#494949"
                 />
-              </video>
-            )}
+                <rect
+                  x="0.984375"
+                  y="0.96875"
+                  width="10"
+                  height="10"
+                  rx="5"
+                  fill="#0F46F5"
+                />
+                <rect
+                  x="0.984375"
+                  y="188.469"
+                  width="10"
+                  height="10"
+                  rx="5"
+                  fill="#0F46F5"
+                />
+                <rect
+                  x="0.984375"
+                  y="375.969"
+                  width="10"
+                  height="10"
+                  rx="5"
+                  fill="#0F46F5"
+                />
+                <rect
+                  x="0.984375"
+                  y="563.469"
+                  width="10"
+                  height="10"
+                  rx="5"
+                  fill="#0F46F5"
+                />
+              </svg>
+            </div>
+            <div className="col row d-flex  p-0 ">
+              {data.map(({ title, des, bol }) => (
+                <VideoOnHover key={title} title={title} des={des} bol={bol} />
+              ))}
+            </div>
           </div>
-          {/* <div className="col-5"> </div> */}
-          <div className="col-1 m-5 m-md-1 p-5 p-md-1">
-            <svg
-              width="11"
-              height="550"
-              viewBox="0 0 11 761"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg">
-              <rect
-                width="1"
-                height="760"
-                transform="translate(5.48438 0.96875)"
-                fill="#494949"
-              />
-              <rect
-                x="0.984375"
-                y="0.96875"
-                width="10"
-                height="10"
-                rx="5"
-                fill="#0F46F5"
-              />
-              <rect
-                x="0.984375"
-                y="188.469"
-                width="10"
-                height="10"
-                rx="5"
-                fill="#0F46F5"
-              />
-              <rect
-                x="0.984375"
-                y="375.969"
-                width="10"
-                height="10"
-                rx="5"
-                fill="#0F46F5"
-              />
-              <rect
-                x="0.984375"
-                y="563.469"
-                width="10"
-                height="10"
-                rx="5"
-                fill="#0F46F5"
-              />
-            </svg>
-          </div>
-          <div className="col row d-flex">
-            {data.map(({ title, des, bol }) => (
-              <VideoOnHover key={title} title={title} des={des} bol={bol} />
+
+          <div
+            className="container-md p-5 m-md-5 row d-md-flex "
+            // style={{ padding: "60px", margin: "60px" }}
+          >
+            {[
+              { num: "80+", text: "Satistied Customers" },
+              { num: "100+", text: "Peojects in 26 Years" },
+              { num: "200+", text: "Team Members" },
+              { num: "10+", text: "Industry Verticals" },
+            ].map(({ num, text }) => (
+              <div
+                className="col text-white m-2 px-md-4 py-md-2 "
+                style={{
+                  background: "rgba(230, 230, 230, 0.10)",
+                  // width: '218px',
+                  // color: '#FFF',
+                  // height: '150px',
+                  // padding: '20px',
+                }}>
+                <div
+                  className=""
+                  style={{
+                    fontSize: "62px",
+                  }}>
+                  {num}
+                </div>
+                <div
+                  className="p-1"
+                  style={{
+                    fontSize: "15px",
+                  }}>
+                  {text}
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-
-        <div
-          className=" container px-5 mx-md-5 row d-flex "
-          // style={{ padding: '40px', margin: '60px' }}
-        >
-          {[
-            { num: "80+", text: "Satistied Customers" },
-            { num: "100+", text: "Peojects in 26 Years" },
-            { num: "200+", text: "Team Members" },
-            { num: "10+", text: "Industry Verticals" },
-          ].map(({ num, text }) => (
-            <div
-              className="col text-white m-1 px-md-4 py-md-2"
-              style={{
-                background: "rgba(230, 230, 230, 0.10)",
-                // width: '218px',
-                // color: '#FFF',
-                // height: '150px',
-                // padding: '20px',
-              }}>
-              <div
-                className=""
-                style={{
-                  fontSize: "62px",
-                }}>
-                {num}
-              </div>
-              <div
-                className="p-1"
-                style={{
-                  fontSize: "15px",
-                }}>
-                {text}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </MyVidContext.Provider>
@@ -802,12 +861,12 @@ function VideoOnHover({ title, des }) {
 
   return (
     <div onMouseEnter={onEnter} onMouseLeave={onLeve}>
-      <div className="p-0" key={title}>
+      <div className="" key={title}>
         {/* {
           open ?
         } */}
 
-        <div className="col-md-5 col-8 p-3 m-3 m-md-0  p-md-0">
+        <div className="col-md-5 col-8  ">
           <div
             className=""
             style={
@@ -858,23 +917,23 @@ function HomeTestimonials() {
         title={"Hear from our satisfied clients"}
       />
       <div className="row d-flex bg-black">
-        <div className="col-7 p-0">
+        <div className="col-md-7 p-0">
           <img
             src={homegirl}
             // src="https://s3-alpha-sig.figma.com/img/77c6/4a50/99fe347da26dc05058b4f234d1c87b39?Expires=1691366400&Signature=komz~clxkqPpkZTe1D0FUX-u0XQ2L1w0oHwp28mGlYpRP1eQTsXYiuD7T~C0op2Gs72zj9Bzq~hNG5xl4va0anCFReHSMq~jNYTC4FjJbDAB-SaV31Ea5OOvfNcj4u-phF4xjRXLgQjT5eABPrDF5EWxZa8UBkFNqUORkUpZ7hfAJz82HR1sOMdVu6SHXIs2~prdXXCbI9LmJguXqcKD9HTviKQOl5o8rRmzHWQeGTTFwsyG30xQNC05AMd28tbFQIW~jUjf5FB8frCaPKGia9paMl3rzbE0HGg2WoFFqyp7vamJqolfEKdUOEqmGYqadD1THZPZYHcTRz6wpAnUBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-            className="img-fluid"
+            className="img-fluid w-100"
             alt="none"
           />
         </div>
         <div className="col ">
-          <div className="">
+          <div className="m-4 p-1">
             <div
-              className=""
+              className=" pb-5"
               style={{
                 color: "rgba(255, 255, 255, 0.87)",
                 fontSize: "20px",
-                padding: "40px",
-                marginBottom: "50px",
+                // padding: "40px",
+                // marginBottom: "50px",
               }}>
               Teksett has been instrumental in the success of our manufacturing
               business. As a founder, I wanted a reliable IT partner to handle
@@ -929,7 +988,7 @@ function HomeTestimonials() {
             </div>
 
             <div
-              className="m-3"
+              className=""
               style={{
                 color: "#FFF",
                 fontSize: "40px",
@@ -937,7 +996,7 @@ function HomeTestimonials() {
               Rebecca (CEO)
             </div>
             <div
-              className="m-3"
+              className=""
               style={{
                 color: "#0F46F5",
                 fontSize: "25px",
@@ -962,24 +1021,28 @@ function HomeTestimonials() {
 export function HomeBlogsArticles({ insi }) {
   const cards = [
     {
-      pic: last1,
+      // pic: last1,
+      pic: "https://s3-alpha-sig.figma.com/img/ba6a/8640/b34e3ca51ef925f3834e1a7baf234d05?Expires=1691366400&Signature=BhONDK~vw7I4DFxPUwXETGrPusxO8KxGDrK0R8-5j6zcdPvdntj4aHFENH7PJCR1rpCoxXWbKCM7JXREsSBe1sbHZ7NP~LrhIa2D83P7qCKTYEE37YRWM3picE1l7JdBzb3O8nhtHm-1jx6aRSGWfi3OqgarqCPnXsnjTYnyQHk7xeUr4OHlTjRPu6c0xvrYbSIbzPyzyvlZ2g-1hyMsBM0DEzH6ZL6VrT5jnCgFUFvme81TJtzyK5QkuE5zYzICzhwz1wPUOzSmi1h~lmoAfW7Jo1yk388bt1gbnwfocl99ks9dJa3iU8wJU1~ru26LXpOphyrnvK0O2r20xloTxA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
       title: "Public cloud vs. own servers: do the math!",
       des: "Date → 20 • March • 2023",
     },
     {
-      pic: last2,
+      // pic: last2,
+      pic: "https://s3-alpha-sig.figma.com/img/930d/52b6/f8b46bc5f41b8077ebe1e641bb827440?Expires=1691366400&Signature=EtihlBdU-JIf9dRBr123w9yXRh0je0EN~8Yajt7xTSpXc0up-HnE8GCnTRjGBgLxeGzA~cBYjEBHs2JEj7gW4Anapx7CmXJmErlIKR3q08BGI~ADXNpL8aUbINJyBR-ZIOytkryBrxcgY8TtTENnCDQIGxVrgJhSMhN2kGfgIGW2lcOSLyTsIOu4kQo~w~tGJhhJF7CohYmoYCVG684JNcVNZNxKbRiqV7vlk3HrrfiKHrekWCUR~lzoeUUNy9jl8vV8kO8KPuJUOJNuUHLTW040p1VYqJrEP9HD03EiyWBDDxrgeZpxvyv3YO-L9401ZJV0gU5-1ge-bvbGS5Qx5w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
       title:
         "Cloud transformation, change management and exit strategy – A holistic approach.",
       des: "HDate → 17 • March • 2023",
     },
     {
-      pic: last3,
+      // pic: last3,
+      pic: "https://s3-alpha-sig.figma.com/img/5bd1/a21a/91bfb585068c7905449aa2ae1c025056?Expires=1691366400&Signature=XJ6MV7xczY5IDSeaRFeGhHcnnJzpyq9DX7~SFWTwpLTRuMeA3UURp3j04XUPvGzUWmkQojspfk~75BYdkzNvZAVj9bohSH15w80Gno-Ms5WGNYhOMWYM2W6wW4V8ed7ILO~EYXE9KiUwJ4vGrEjDNwz4kqsiOAjkwFggU4RDtxwUS80C6yPz3L5akeJ7S~2NO5Ul0~~rGc3UAajN2XEwgo37qCnUYWSIp151fOkuosAhULkyt8ipexc3PRrh-wCj2kbN-Bv8dedqhPPqS1vuI4XKVlhh7j5C6pLw1BRd48qfOpkw7sKlvOe3nAWaA5hCkq8C8kXv2Cu44Q565VWLjg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
       title:
         "Securely integrating legacy applications into the cloud with Azure AppProxy",
       des: "Date → 4 • March • 2023",
     },
     {
-      pic: last4,
+      // pic: last4,
+      pic: "https://s3-alpha-sig.figma.com/img/306a/1e18/b8696003a00f0e43a2b29a872a504889?Expires=1691366400&Signature=ELPshFfNveOOpmVMDEWYFn0pJ9JGd98xWelxUzNNJ8f4b5~IOuXQB1GKaUcHrzUPvnrg4w7VqQMjtjF0PhzgrfQHGyM9JqguMCBY~sihBHXsSF4dS4Lnz2Z0F5krTYf6Vx2mh0qHPXq~mk8dyimc1-9LSKyFjwGsAenVeHGoXD3oL6KiYDPwPzQNo8T~GnTW4ybl460b3XLAW0ernE5V0djZRlvv8SDKAlselKzdi-BDvhr612OOZFDfK4pOy94Kkv1oPt9KaeOYr5sLBN4GUHl9gL5UvJCC~gD46S9pgw74mDtSHXGvnYh43cRAvOiESP5Xa391rKQcnsxYxUwKPA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
       title: "What is IT architecture and why does it matter?",
       des: "Date → 25 • February • 2023",
     },

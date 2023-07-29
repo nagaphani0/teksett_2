@@ -1,4 +1,4 @@
-import { CommonPageHead, CommonPlusOpen, Sponsers } from "./common";
+import { CommonPageHead, CommonPlusOpen } from "./common";
 import aboutintro from "../images/aboutintro.png";
 import last1 from "../images/lastpage (1).png";
 import last2 from "../images/lastpage (2).png";
@@ -8,6 +8,17 @@ import rarrow from "../images/rightarrow.png";
 // import { Col, Row } from "react-bootstrap";
 import { useState } from "react";
 import onetwoback from "../images/industries/123back.png";
+import s1 from "../images/sponsers/cis.png";
+import s2 from "../images/sponsers/google.png";
+import s3 from "../images/sponsers/ora.png";
+import s4 from "../images/sponsers/ama.png";
+import s5 from "../images/sponsers/del.png";
+import s6 from "../images/sponsers/intel.png";
+import s7 from "../images/sponsers/ibm.png";
+import s8 from "../images/sponsers/micro.png";
+import s9 from "../images/sponsers/utube.png";
+import s10 from "../images/sponsers/image 37.png";
+import { styled } from "styled-components";
 
 export default function About() {
   // const [isHovered, setIsHovered] = useState(false);
@@ -39,7 +50,7 @@ export default function About() {
   return (
     <div>
       <CommonPageHead
-        title={"About: Your reliable international IT solutions agency "}
+        title={"About: We're here to help you succeed "}
         page={"About us"}
       />
       <img
@@ -50,11 +61,13 @@ export default function About() {
       />
       <div className="container p-4 m-4" style={{ fontWeight: 598 }}>
         <h1 className="m-4">Who we are</h1>
-        <hr />
+        <div className="m-2">
+          <hr />
+        </div>
         <div className="row">
           <div className="col-4"></div>
           <div
-            className="col m-2"
+            className="col-md m-md-2"
             style={{
               fontSize: "20px",
               // fontFamily: 'Barlow',
@@ -125,7 +138,7 @@ function Circles() {
           { num: 3, text: "competence" },
           { num: 4, text: "stability" },
         ].map(({ num, text }) => (
-          <div className="col-4 col-md-2 m-md-3 m-sm-1 p-2">
+          <div className="col-4 col-md-2 m-md-3 m-1 p-4">
             <Secondcircle num={num} text={text} />
           </div>
         ))}
@@ -136,11 +149,19 @@ function Circles() {
 
 function Secondcircle({ num, text }) {
   const [bol, setBol] = useState(false);
+  const Zoom = styled.div`
+    .zoom-in-effect {
+      transition: transform 0.2s; /* Set the transition time for smooth effect */
+    }
 
+    .zoom-in-effect:hover {
+      transform: scale(1.03); /* Increase the scale to zoom in on hover */
+    }
+  `;
   return (
-    <div onMouseEnter={() => setBol(true)} onMouseLeave={() => setBol(false)}>
+    <Zoom onMouseEnter={() => setBol(true)} onMouseLeave={() => setBol(false)}>
       <div
-        className="col-1 p-md-5 p-0 "
+        className="col-1 p-md-5 p-0 zoom-in-effect"
         style={
           {
             // paddingLeft: '90px', paddingTop: '60px', paddingBottom: '10px', margin: '60px'
@@ -158,7 +179,7 @@ function Secondcircle({ num, text }) {
             height: "270px",
             // margin: '40px',
             padding: "",
-            flexShrink: "0",
+            // flexShrink: "0",
           }}>
           <div
             className="text"
@@ -195,272 +216,9 @@ function Secondcircle({ num, text }) {
           </div>
         </div>
       </div>
-    </div>
+    </Zoom>
   );
 }
-
-// function MyTeam() {
-//   const teamMem = [
-//     { name: "John Doe", role: "Group Strategy Director", pic: team1 },
-//     { name: "", role: "", pic: "" },
-//     { name: "Frank Lewis", role: "Group Strategy Director", pic: team2 },
-//     { name: "John Doe", role: "Group Strategy Director", pic: team3 },
-
-//     { name: "John Doe", role: "Group Strategy Director", pic: team4 },
-//     { name: "Kelly Kraft", role: "Co Founder, Director", pic: team5 },
-//     { name: "", role: "", pic: "" },
-
-//     { name: "Rebecca", role: "Group Strategy Director", pic: team7 },
-//     { name: "", role: "", pic: "" },
-//     { name: "Joseph", role: "Group Strategy Director", pic: team6 },
-
-//     { name: "John Doe", role: "Group Strategy Director", pic: team8 },
-//   ];
-//   return (
-//     <div className="p-4 m-5">
-//       <span
-//         style={{
-//           color: "#161616",
-//           fontSize: "12px",
-//           fontFamily: "Space Grotesk",
-//           lineHeight: "12px",
-//           letterSpacing: "1px",
-//           textTransform: "uppercase",
-//           borderRadius: "4px",
-//           background: "#EFEFEF",
-//           padding: "2px",
-//           margin: "5px",
-//         }}>
-//         our team
-//       </span>
-
-//       <div className="row d-flex flex-row">
-//         {teamMem.map(({ name, role, pic }) => (
-//           <div className="col-3 p-4">
-//             <div className="">
-//               <img
-//                 src={pic}
-//                 alt=""
-//                 style={{
-//                   width: "auto",
-//                   height: "270px",
-//                   flexShrink: "0",
-//                 }}
-//               />
-//             </div>
-//             <div
-//               className=""
-//               style={{
-//                 color: "#161616",
-//                 leadingTrim: "both",
-//                 textEdge: "cap",
-//                 fontSize: "27px",
-//                 fontFamily: "Space Grotesk",
-//                 fontWeight: "500",
-//                 // lineHeight: '88px',
-//                 letterSpacing: "-1.2px",
-//               }}>
-//               {name}
-//             </div>
-//             <div
-//               className=""
-//               style={{
-//                 color: "#707070",
-//                 // leadingTrim: 'both',
-//                 // textEdge: 'cap',
-//                 fontSize: "20px",
-//                 fontFamily: "Space Grotesk",
-//                 fontWeight: "500",
-//                 // lineHeight: '88px',
-//                 letterSpacing: "-1.2px",
-//               }}>
-//               {role}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//       <MyTeamDes />
-//     </div>
-//   );
-// }
-
-// function MyTeamDes() {
-//   const leaders = [
-//     { name: "John Doe", pic: team1, mail: "johndoe@email.com" },
-//     { name: "Kelly Kraft", pic: team5, mail: "kellykraft@email.com" },
-//   ];
-//   return (
-//     <div className="container">
-//       <div
-//         className=""
-//         style={{
-//           color: "#161616",
-//           fontSize: "61px",
-//           fontFamily: "Barlow",
-//           lineHeight: "70px",
-//           letterSpacing: "-1px",
-//           padding: "30px",
-//         }}>
-//         Leadership
-//       </div>
-//       <hr />
-//       {leaders.map(({ pic, name, mail }) => (
-//         <Row className="m-1">
-//           <Col className="p-4 m-4 ">
-//             <div className=" d-flex">
-//               <div className="">
-//                 <img
-//                   src={pic}
-//                   alt=""
-//                   style={{
-//                     borderRadius: "8px",
-//                     width: "360px",
-//                     height: "375px",
-//                     flexShrink: "0",
-//                   }}
-//                 />
-//               </div>
-//               <div
-//                 className=""
-//                 style={{
-//                   color: "#161616",
-//                   fontVariantCaps: "all-small-caps",
-//                   fontSize: "30px",
-//                   fontFamily: "Space Grotesk",
-//                   // lineHeight: '88px',
-//                   letterSpacing: "-1.2px",
-//                 }}>
-//                 {name}
-//               </div>
-//             </div>
-//           </Col>
-//           <Col>
-//             <div className="">
-//               <div
-//                 className=" "
-//                 style={{
-//                   color: "#161616",
-//                   fontVariantCaps: "all-small-caps",
-//                   fontSize: "30px",
-//                   fontFamily: "Space Grotesk",
-//                   fontWeight: "600",
-//                   // lineHeight: '88px',
-//                   letterSpacing: "-1.2px",
-//                 }}>
-//                 CO-Founder
-//               </div>
-//               <div
-//                 className=""
-//                 style={{
-//                   color: "#707070",
-//                   fontVariantCaps: "all-small-caps",
-//                   fontSize: "22px",
-//                   fontFamily: "Space Grotesk",
-//                   fontWeight: "500",
-//                   // lineHeight: '88px',
-//                   letterSpacing: "-1.2px",
-//                   opacity: "0.6000000238418579",
-//                 }}>
-//                 Group Strategy Director
-//               </div>
-//               <div
-//                 className=""
-//                 style={{
-//                   color: "#161616",
-//                   fontSize: "16px",
-//                   fontFamily: "Barlow",
-//                   // lineHeight: '41.2px',
-//                   letterSpacing: "-0.1px",
-//                   paddingLeft: "10px",
-//                   padding: "2px ",
-//                   marginTop: "30px",
-//                 }}>
-//                 Lorem ipsum dolor sit amet consectetur. Vitae id eget nibh
-//                 fermentum sit. Eu urna facilisi vulputate natoque nunc. Auctor
-//                 nulla tempus tortor natoque fusce ut arcu morbi sed. Tellus
-//                 imperdiet pulvinar aliquet urna consectetur non amet elementum.
-//                 Ultrices diam eget ac eleifend purus.
-//               </div>
-//               <hr height="2px" />
-//               <div className="row">
-//                 <div className="col-3">
-//                   <div
-//                     className=""
-//                     style={{
-//                       color: "#707070",
-//                       fontVariantCaps: "all-small-caps",
-//                       fontSize: "30px",
-//                       fontFamily: "Space Grotesk",
-//                       fontWeight: "500",
-//                       // lineHeight: '88px',
-//                       letterSpacing: "-1.2px",
-//                     }}>
-//                     Contacts
-//                   </div>
-//                 </div>
-//                 <div
-//                   className="col"
-//                   style={{
-//                     color: "#161616",
-//                     // leadingTrim: 'both',
-//                     // textEdge: 'cap',
-//                     fontSize: "23px",
-//                     fontFamily: "Space Grotesk",
-//                     // fontStyle: 'normal',
-//                     fontWeight: 500,
-//                     // lineHeight: '88px',
-//                     letterSpacing: "-1.2px",
-//                   }}>
-//                   <div className="">{mail}</div>
-//                   <div className="">+1 - 123456789</div>
-//                   <hr />
-//                 </div>
-//               </div>
-//               <div className="row">
-//                 <div className="col-3">
-//                   <div
-//                     className=""
-//                     style={{
-//                       color: "#707070",
-//                       fontVariantCaps: "all-small-caps",
-//                       fontSize: "26px",
-//                       fontFamily: "Space Grotesk",
-//                       fontWeight: "500",
-//                       // lineHeight: '88px',
-//                       letterSpacing: "-1.2px",
-//                     }}>
-//                     Social
-//                   </div>
-//                 </div>
-//                 <div
-//                   className="col"
-//                   style={{
-//                     color: "#161616",
-//                     fontVariantCaps: "all-small-caps",
-//                     fontSize: "26px",
-//                     fontWeight: "550",
-//                     fontFamily: "Space Grotesk",
-//                     // lineHeight: '88px',
-//                     // letterSpacing: '-1.2px',
-//                   }}>
-//                   <div className="">LinkedIn</div>
-//                   <div className="">Twitter</div>
-//                   <div className="">Gmail</div>
-//                   <div className="">Instagram</div>
-//                 </div>
-//               </div>
-//             </div>
-//           </Col>
-//           <hr
-//             style={{
-//               height: "2px",
-//             }}
-//           />
-//         </Row>
-//       ))}
-//     </div>
-//   );
-// }
 
 function LastInPage({ model }) {
   const cards = [
@@ -581,9 +339,9 @@ export function CommonLastInPage({ data, model }) {
 
 export function AboutLast() {
   return (
-    <div className="p-4 m-5">
+    <div className="p-2 p-md-4 m-md-5">
       <div
-        className="col-9 p-2 m-2"
+        className="col-12 col-md-9 col-xl-9 p-md-2 m-md-2"
         style={{
           color: "#161616",
           fontFamily: "Barlow",
@@ -595,29 +353,29 @@ export function AboutLast() {
         }}>
         We are happy to work with largest global brands
       </div>
-      <div className="row ">
-        <div className="col-3 mx-3 p-3 ">
-          <Sponsers co={true} />
+      <div className="row">
+        <div className="col-md-4">
+          <AboutSponsers />
         </div>
-        <div className="col m-2">
-          <div className="row bg-black p-4 h-100">
-            <div className="col-5">
+        <div className="col m-3 py-2">
+          <div className="row bg-black p-4 ">
+            <div className="col-md-6">
               <img
-                className="img-fluid h-100 "
+                className="img-fluid"
                 src="https://s3-alpha-sig.figma.com/img/33b5/1337/6a8a886fe03f86969aca342bcea0f8ad?Expires=1691366400&Signature=dHi~XpknQAHSUoPtw3Os-dvhtq-092h--b9gIujtn5taYd0FAd8vSmHDIXJD2rxAVttRMFsNnL~hPzYgpeBjZSZzhK~Ahrx0ZRFEv2SNI1IlpAZNRaZGfwhTpdtYkRqvG4IaaFgS00RaEFZgiS-2HsO~ACq4OZvHEZrbNBycqtIhKznhnxhWWF82DmMhX-f0apUpWsEfokwH4kVQBfdt~UQwri2~ktbx3zuApLNphDz-xiO24HfAm683WtMt15lyRnJu21vgWxqx4PruGG23qiqTgOlzvrAW1G3yMK-vOiERjoyJVF9~b6ZdQIgaju724XF~eZXqVLgvkmPaJ7cCSQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                 alt=""
               />
             </div>
-            <div className="col-6">
+            <div className="col col-md-6">
               <div
-                className="  py-2"
+                className="py-2"
                 style={{
                   color: "#FFF",
                   fontFamily: "Barlow",
                   fontSize: "56px",
                   fontStyle: "normal",
                   fontWeight: 400,
-                  // lineHeight: "70px" /* 125% */,
+                  lineHeight: "60px" /* 125% */,
                   letterSpacing: "-1px",
                 }}>
                 Robert Steward
@@ -657,6 +415,31 @@ export function AboutLast() {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function AboutSponsers() {
+  const sponsers = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
+  return (
+    <div>
+      <div className="row bg-black">
+        {sponsers.map((spon) => (
+          <div key={spon} className="col-6 py-1">
+            <img
+              className="img-fluid p-2 m-2"
+              style={
+                {
+                  // maxWidth: "165px", // Set the maximum width of the image
+                  // maxHeight: "150px",
+                }
+              }
+              alt="no"
+              src={spon}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

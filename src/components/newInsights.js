@@ -336,10 +336,10 @@ function Careers() {
   ];
   return (
     <div className="" style={{ backgroundColor: " black", color: "#fff" }}>
-      <div className="row">
+      <div className="row px-4 mx-2">
         <div className="col-4">
           <div
-            className="p-1 m-4 col-5"
+            className="p-1 m-4 col-md-2"
             style={{
               borderRadius: "4px",
               backgroundColor: "#efefef",
@@ -355,7 +355,7 @@ function Careers() {
           </div>
         </div>
 
-        <div className="col ">
+        <div className="col-7">
           <div
             className=""
             style={{
@@ -372,8 +372,8 @@ function Careers() {
             View open positions
           </div>
           {openings.map(({ role, Location, Experience }) => (
-            <div className="row text-bg-dark p-3 m-4">
-              <div className="col-8">
+            <div className="row text-bg-dark p-2 my-4">
+              <div className="col-8 p-2">
                 <div
                   className="role p-2"
                   styles={{
@@ -394,7 +394,7 @@ function Careers() {
                     fontSize: "18px",
                     fontStyle: "normal",
                     fontWeight: 400,
-                    lineHeight: "24px", // 133.333%
+                    // lineHeight: "24px", // 133.333%
                   }}>
                   <div className="loc">
                     Location{" "}
@@ -405,7 +405,7 @@ function Careers() {
                         fontSize: "18px",
                         fontStyle: "normal",
                         fontWeight: 400,
-                        lineHeight: "24px",
+                        // lineHeight: "24px",
                       }}>
                       {Location}
                     </span>{" "}
@@ -430,9 +430,9 @@ function Careers() {
                   />
                 </svg>
               </div>
-              <div className="col-3 d-flex flex-column p-4 m-2">
+              <div className="col-3 d-flex flex-column p-3 m-3">
                 <div
-                  className="btn "
+                  className="btn"
                   style={{
                     // borderRadius: '4px',
                     color: "#FFF",
