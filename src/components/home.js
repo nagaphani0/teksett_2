@@ -34,7 +34,6 @@ import video1 from "../images/home/whytess/exceptional expertise.mp4";
 import video3 from "../images/home/whytess/Client satisfaction.mp4";
 import video2 from "../images/home/whytess/Client focused.mp4";
 import video4 from "../images/home/whytess/Cutting Edge technology.mp4";
-import styled from "styled-components";
 
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";

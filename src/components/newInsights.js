@@ -2,11 +2,17 @@ import React from "react";
 import home from "../images/insights/Rectangle 32.png";
 // import jacob from "../images/team (8).png";
 import { HomeBlogsArticles } from "./home";
+import jacob from "../images/sponsers/Rectangle 59.png";
+
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 export default function NewInsights() {
   return (
     <div>
       <Intro />
+      <OurHistory />
       <WorkBenfits />
       <Careers />
       <EmployeTestimonials />
@@ -74,14 +80,159 @@ function Intro() {
   );
 }
 
+function OurHistory() {
+  return (
+    <div>
+      <div className="title display-4 col-9 m-5 px-4">
+        Focused expert teams delivering exception sevices since 1996
+      </div>
+      <ScrolableHistory />
+    </div>
+  );
+}
+
+function ScrolableHistory() {
+  const ppic =
+    "https://s3-alpha-sig.figma.com/img/4534/4435/f3faedb6dfd49d978d344bb23704956b?Expires=1691366400&Signature=ZrCW7dx5HUyeWCuTtlEf~vjQnjV8UlYoEIx-Ek~CpNOczOiFGYLeEAl3MJZDr3SD1hlGLyNSynH5zjEgGbH98mlcXvr1RjpXrLC8YGrOpvBqCHRNqmFw~WDxC1nDGNXu9XpC8FmT7a7khTZ6pJdjlwjm-SEYiQOhD83P~Gh94fhwik-XkbaQnqCYGSMGAs5u2o7e5dIJNJqDUCJomhBtazVxMYNKHT~ocrILzeU1qlH6dNaLJJc17h3oBR2C6W1okK0hmCw5p3rvstOsi71Uq5ElwFgC4gEUtHj-aRxL5ASoffHfeW8cI1RqzdRNQSRlCofGDsU8hqgyaoVDbAlTKw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4";
+  const hhistory = [
+    {
+      year: 1996,
+      title: "Teksett was Founded",
+      des: "Teksett was founded in Omaha. It started as a small startup with a focus on developing software applications for businesses and providing best IT solutions.",
+      pic: ppic,
+    },
+    {
+      year: 2001,
+      title: "Partnership",
+      // title: "Teksett was Founded",
+
+      des: "The company expands its product line and starts offering web development services to cater to the growing demand for online solutions.",
+      pic: ppic,
+    },
+    {
+      year: 2005,
+      title: "Partnership",
+      des: "The company expands its product line and starts offering web development services to cater to the growing demand for online solutions.",
+      pic: ppic,
+    },
+  ];
+  return (
+    <div>
+      <div className="">
+        <div className=" container d-flex justify-content-end">
+          <div
+            className="btn rounded-5 swiper-button-prev px-2 mx-2"
+            style={{
+              // borderRadius: "10px",
+              border: "1px solid #707070",
+            }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="38"
+              height="47"
+              viewBox="0 0 48 48"
+              fill="none">
+              <g clip-path="url(#clip0_313_11100)">
+                <path
+                  d="M15.98 26L40 26L40 22L15.98 22L15.98 16L8 24L15.98 32L15.98 26Z"
+                  fill="#323232"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_313_11100">
+                  <rect
+                    width="48"
+                    height="48"
+                    fill="white"
+                    transform="translate(48 48) rotate(180)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <div
+            className="btn  rounded-5 swiper-button-next px-2 mx-2"
+            style={{
+              // borderRadius: "4px",
+              border: "1px solid #707070",
+            }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="38"
+              height="47"
+              viewBox="0 0 48 48"
+              fill="none">
+              <g clip-path="url(#clip0_313_11099)">
+                <path
+                  d="M32.02 22H8V26H32.02V32L40 24L32.02 16V22Z"
+                  fill="#323232"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_313_11099">
+                  <rect width="48" height="48" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+        </div>
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={50}
+          slidesPerView={2}
+          className=""
+          style={{ paddingLeft: "30%" }}
+          navigation={{
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          }}>
+          {hhistory.map(({ title, pic, des, year }, index) => (
+            <SwiperSlide key={index}>
+              <div className="col-11">
+                <div className="p-1 ">
+                  <div className="d-flex fs-4 ">
+                    <div className="px-3">{year}</div>
+                    <div className="">{title}</div>
+                  </div>
+                  <hr width={"130%"} />
+                  <div
+                    className=" py-2 my-2"
+                    style={{
+                      color: "#161616",
+                      // fontFamily: "Barlow",
+                      fontSize: "20px",
+                      // fontStyle: "normal",
+                      fontWeight: "400",
+                      // marginBottom:''
+                      // width: "300px",
+                    }}>
+                    {des}
+                  </div>
+                  <img
+                    className="img-fluid "
+                    src={pic}
+                    alt="none"
+                    height={"60%"}
+                    width={"400px"}
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </div>
+  );
+}
+
 function EmployeTestimonials() {
   return (
     <div>
       <div id="employe testimonials" className="  container-fluid row p-3 m-3">
-        <div className="col-10 col-md-4 m-4 p-3">
+        <div className="col-10 col-md-3 m-4 ">
           <img
             // src={jacob}
-            src="https://s3-alpha-sig.figma.com/img/a841/2ead/b9f6ee2bbc4b9e26e08e07dbf3b4537a?Expires=1691366400&Signature=mpl0yUmVnH8-PHB20MHJT6XUxBvUQSvEtijDCup9s3Q7yvMta4JtmqQ~UqPutKAhhf08zM~hNzzs2G4VDf8Hxdr1uYqYqSKQLfv8zRaF8ANzfVQM2fjetntPcmKELRZUApUgYUfm~tSvkHcalzw0VveBpY5zuGiDMg4Had4EuqGoh9qVBwmnpSGONNLR8GCT6WLB-nNbrGkuccO~LNOnP9kvPRlDACNibIeJzeEZkLNTZb3HhkTmHTXZvTc~aCGMFuX~04c1tOpJzG8KkrJWT6dmGq2zr1lFnd4MHJPQgXV~~aelYcZo5ElG1imfdW5-Sgd9IncG5FO30cihyuZ4Ag__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+            src={jacob}
             className="img-fluid"
             alt=""
             style={{
@@ -104,7 +255,7 @@ function EmployeTestimonials() {
             Jacob S.
           </div>
           <div
-            className="p-3"
+            className="p-3 col-md-9"
             style={{
               color: "rgba(22, 22, 22, 0.87)",
               fontfamily: "Barlow",
@@ -337,9 +488,9 @@ function Careers() {
   return (
     <div className="" style={{ backgroundColor: " black", color: "#fff" }}>
       <div className="row px-4 mx-2">
-        <div className="col-4">
+        <div className="col-md-4">
           <div
-            className="p-1 m-4 col-md-2"
+            className="p-2 my-4 m-md-4  col-3 col-md-3"
             style={{
               borderRadius: "4px",
               backgroundColor: "#efefef",
@@ -355,7 +506,7 @@ function Careers() {
           </div>
         </div>
 
-        <div className="col-7">
+        <div className="col-md-7 ">
           <div
             className=""
             style={{
@@ -373,7 +524,7 @@ function Careers() {
           </div>
           {openings.map(({ role, Location, Experience }) => (
             <div className="row text-bg-dark p-2 my-4">
-              <div className="col-8 p-2">
+              <div className="col-8 col-md-8 p-2">
                 <div
                   className="role p-2"
                   styles={{
@@ -413,7 +564,7 @@ function Careers() {
                   </div>
                 </div>
               </div>
-              <div className="col">
+              <div className="d-none d-md-block col-md">
                 <svg
                   width="1"
                   height="90"
@@ -430,18 +581,19 @@ function Careers() {
                   />
                 </svg>
               </div>
-              <div className="col-3 d-flex flex-column p-3 m-3">
+              <div className="col-3 col-md-3 d-flex  py-3 my-3">
                 <div
-                  className="btn"
+                  className="btn d-flex l"
                   style={{
                     // borderRadius: '4px',
                     color: "#FFF",
                     background: "#0F46F5",
                     lineHeight: "16px",
+
                     fontWeight: "500",
                   }}>
                   Apply Now
-                  <span className="p-2">
+                  <div className="px-1 d- d-md-block">
                     <svg
                       width="2"
                       height="16"
@@ -456,12 +608,12 @@ function Careers() {
                         fill-opacity="0.5"
                       />
                     </svg>
-                  </span>
-                  <span>
+                  </div>
+                  <div className="d- d-md-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="23"
-                      height="16"
+                      width="20"
+                      height="14"
                       viewBox="0 0 23 16"
                       fill="none">
                       <path
@@ -477,7 +629,7 @@ function Careers() {
                         fill="white"
                       />
                     </svg>
-                  </span>
+                  </div>
                 </div>
               </div>
             </div>
