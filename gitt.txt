@@ -28,3 +28,6 @@ npm create vite my-app -- --template react
 npm i
 
 npm run dev
+
+
+my new pc linux
