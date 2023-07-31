@@ -22,7 +22,7 @@ from vscode.dev always
 from pc vs
 
 
-install wite
+install vite
 npm create vite my-app -- --template react
 
 npm i
@@ -31,3 +31,6 @@ npm run dev
 
 
 my new pc linux
+
+
+my new pc linux lite
