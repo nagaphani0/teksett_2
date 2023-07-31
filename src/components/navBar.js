@@ -3,10 +3,10 @@ import logo from "../images/Asset 1 2.png";
 import scale from "../images/scale.png";
 import { Link } from "react-router-dom";
 
+import Hamburger from 'hamburger-react'
 export default function NavBar() {
   const [currentPage, setCurrentPage] = useState("Home");
-  console.log(currentPage);
-
+  const [isOpen, setOpen] = useState(false)  
   return (
     <div>
       <div className="row" style={{ marginLeft: "7px" }}>
@@ -99,20 +99,19 @@ export default function NavBar() {
         </div>
         <div className="col-1"></div>
         <div
-          className="col d-none d-md-block"
-          id="nav text"
-          style={{
-            color: "#161616",
-            fontSize: "11px",
-            fontFamily: "Space Grotesk",
-            fontStyle: "normal",
-            // fontWeight: 500,
-            lineHeight: "16px",
-            letterSpacing: "-0.4px",
-            // padding: '0px',
-            marginLeft: "36px",
-          }}>
-          <div className="d-flex">
+                    className={` ${open ? '' : 'col d-md-block d-none'}  `}
+                    id='nav text' style={{
+                        color: '#161616',
+                        fontSize: '11px',
+                        fontFamily: 'Space Grotesk',
+                        fontStyle: 'normal',
+                        // fontWeight: 500,
+                        lineHeight: '16px',
+                        letterSpacing: '-0.4px',
+                        // padding: '0px', 
+                        marginLeft: '36px'
+                    }}>
+                    <div className={` ${open ? '' : 'd-flex'}`}>
             <div className="p-2">
               <Link
                 to="/"
@@ -186,8 +185,8 @@ export default function NavBar() {
           </div>
         </div>
         <div className="col-2 ">
-          <div
-            className="hamburger d-block d-md-none"
+        <Hamburger toggled={isOpen} toggle={setOpen} />
+        {/* <div className="hamburger d-block d-md-none" onClick={() => setOpen(!open)} */}
             style={{ marginLeft: "260px" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -207,7 +206,7 @@ export default function NavBar() {
                 </clipPath>
               </defs>
             </svg>
-          </div>
+          {/* </div> */}
         </div>
 
         <div

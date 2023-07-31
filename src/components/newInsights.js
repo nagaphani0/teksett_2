@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import home from "../images/insights/Rectangle 32.png";
 // import jacob from "../images/team (8).png";
 import { HomeBlogsArticles } from "./home";
@@ -116,6 +116,28 @@ function ScrolableHistory() {
       pic: ppic,
     },
   ];
+
+  const [slides, setSlides] = useState(2)
+  console.log(slides);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // Display fewer sponsors on mobile
+        setSlides(2);
+      } else {
+        // Display all sponsors on larger screens
+        setSlides(1);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <div className="">
@@ -179,7 +201,7 @@ function ScrolableHistory() {
         <Swiper
           modules={[Navigation]}
           spaceBetween={50}
-          slidesPerView={2}
+          slidesPerView={2} //slides
           className=""
           style={{ paddingLeft: "30%" }}
           navigation={{

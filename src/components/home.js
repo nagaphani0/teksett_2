@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { CommonCard, Sponsers } from "./common";
 import ind1 from "../images/ind1.png";
 import ind2 from "../images/ind2ag.png";
@@ -312,9 +312,30 @@ const FeedbackCarousel = () => {
       des: "I recommend Teksett because of their agile way of working and focus on achieving top-notch quality of the product. Communication in the project was clear and effective.",
     },
   ];
+  // const [slides, setSlides] = useState(3)
+  // console.log(slides);
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     if (window.innerWidth < 768) {
+  //       // Display fewer sponsors on mobile
+  //       setSlides(2);
+  //     } else {
+  //       // Display all sponsors on larger screens
+  //       setSlides(3);
+  //     }
+  //   };
+
+  //   window.addEventListener('resize', handleResize);
+  //   handleResize();
+
+  //   return () => {
+  //     window.removeEventListener('resize', handleResize);
+  //   };
+  // }, []);
 
   return (
-    <div className="container my-5 d-none d-md-block">
+    <div className="container my-5">
+      
       <div className="swiper-container d-flex">
         <div className="d-flex justify-content-center align-items-center">
           <div
@@ -347,7 +368,7 @@ const FeedbackCarousel = () => {
         <Swiper
           modules={[Navigation]}
           spaceBetween={50}
-          slidesPerView={3}
+          slidesPerView={3} //3 slides
           className="m-3"
           navigation={{
             nextEl: ".swiper-button-next",
@@ -356,7 +377,7 @@ const FeedbackCarousel = () => {
           {feedbackks.map(({ role, man, des }) => (
             <SwiperSlide key={role}>
               <div className="row">
-                <div className="col-md-4 ">
+                <div className="col-md-4">
                   <div className="d-flex py-4 my-1">
                     <div>
                       <img src={man} alt="none" height="50px" />
