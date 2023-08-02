@@ -30,7 +30,4 @@ npm i
 npm run dev
 
 
-my new pc linux
-
-
 my new pc linux lite
