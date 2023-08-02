@@ -118,15 +118,15 @@ function ScrolableHistory() {
   ];
 
   const [slides, setSlides] = useState(2)
-  console.log(slides);
+  // console.log(slides);
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
         // Display fewer sponsors on mobile
-        setSlides(2);
+        setSlides(1);
       } else {
         // Display all sponsors on larger screens
-        setSlides(1);
+        setSlides(2);
       }
     };
 
@@ -201,8 +201,8 @@ function ScrolableHistory() {
         <Swiper
           modules={[Navigation]}
           spaceBetween={50}
-          slidesPerView={2} //slides
-          className=""
+          slidesPerView={slides} //2 slides
+          className="px-md "
           style={{ paddingLeft: "30%" }}
           navigation={{
             nextEl: ".swiper-button-next",
@@ -413,10 +413,10 @@ function WorkBenfits() {
     <div
       className="m-0 p-4"
       style={{ backgroundColor: "black", color: "#fff" }}>
-      <div className="row ">
-        <div className="col">
+      <div className="row">
+        <div className="col-md-4">
           <div
-            className="p-1 m-4 col-5"
+            className=" mx-4 p-1 p-md-1 m-md-4 col-5 col-md-4"
             style={{
               borderRadius: "4px",
               backgroundColor: "#efefef",
@@ -424,7 +424,7 @@ function WorkBenfits() {
               // height: "20px",
               fontFamily: "Space Grotesk",
               // letterSpacing: "1px",
-              // lineHeight: "12px",
+              // lineHeight: "12px"
               textTransform: "uppercase",
               color: "black",
             }}>
@@ -434,38 +434,38 @@ function WorkBenfits() {
 
         <div className="col">
           <div
-            className="p-2"
+            className="p-4 p-md-2 display-md-2 display-2"
             style={{
-              fontSize: "60px",
-              lineHeight: "70px",
+              // fontSize: "60px",
+              lineHeight: "65px",
               fontWeight: "500",
               // color: "#fff",
-              width: "862px",
+              // width: "862px",
             }}>
             Why work with us
           </div>
 
           <div className="row m-4 p-1">
             {benfits.map(({ pic, title, des }) => (
-              <div className="col-6 p-3">
+              <div className="col-md-6 p-3">
                 <div>{pic}</div>
                 <hr />
-                <div
+                <div className="fs-4"
                   style={{
-                    fontSize: "26px",
+                    // fontSize: "26px",
                     lineHeight: "65px",
                     fontWeight: "500",
                   }}>
                   {title}
                 </div>
                 <div
-                  className=""
+                  className="fs-5"
                   style={{
                     color: "#9C9C9C",
                     fontFamily: "Barlow",
-                    fontSize: "20px",
+                    // fontSize: "20px",
                     fontStyle: "normal",
-                    fontWeight: "400",
+                    // fontWeight: "400",
                     lineHeight: "26px",
                   }}>
                   {des}
@@ -603,18 +603,22 @@ function Careers() {
                   />
                 </svg>
               </div>
-              <div className="col-3 col-md-3 d-flex  py-3 my-3">
+              <div className="col-3 col-md-3 d-flex py-3 my-3">
                 <div
-                  className="btn d-flex l"
+                  className="btn d-flex"
                   style={{
                     // borderRadius: '4px',
                     color: "#FFF",
                     background: "#0F46F5",
-                    lineHeight: "16px",
 
-                    fontWeight: "500",
+                    // letterSpacing: "1px",
+                    // lineHeight: "12px",
+                    // fontWeight: "500",
                   }}>
-                  Apply Now
+                  <div className=" lh-2 w-100">
+
+                    Apply Now
+                  </div>
                   <div className="px-1 d- d-md-block">
                     <svg
                       width="2"

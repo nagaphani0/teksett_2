@@ -312,30 +312,30 @@ const FeedbackCarousel = () => {
       des: "I recommend Teksett because of their agile way of working and focus on achieving top-notch quality of the product. Communication in the project was clear and effective.",
     },
   ];
-  // const [slides, setSlides] = useState(3)
-  // console.log(slides);
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     if (window.innerWidth < 768) {
-  //       // Display fewer sponsors on mobile
-  //       setSlides(2);
-  //     } else {
-  //       // Display all sponsors on larger screens
-  //       setSlides(3);
-  //     }
-  //   };
+  const [slides, setSlides] = useState(3)
+  console.log(slides);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        // Display fewer sponsors on mobile
+        setSlides(1);
+      } else {
+        // Display all sponsors on larger screens
+        setSlides(3);
+      }
+    };
 
-  //   window.addEventListener('resize', handleResize);
-  //   handleResize();
+    window.addEventListener('resize', handleResize);
+    handleResize();
 
-  //   return () => {
-  //     window.removeEventListener('resize', handleResize);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <div className="container my-5">
-      
+
       <div className="swiper-container d-flex">
         <div className="d-flex justify-content-center align-items-center">
           <div
@@ -368,7 +368,7 @@ const FeedbackCarousel = () => {
         <Swiper
           modules={[Navigation]}
           spaceBetween={50}
-          slidesPerView={3} //3 slides
+          slidesPerView={slides} //3 slides
           className="m-3"
           navigation={{
             nextEl: ".swiper-button-next",
@@ -454,7 +454,7 @@ function HomeFrentPage() {
               height: "600px",
               flexShrink: "0",
             }}
-            className="position-absolute top-0 end-0 px-4 m-3"
+            className="img-fluid position-absolute top-0 end-0 px-4 m-3 "
           />
         </div>
 
@@ -747,7 +747,7 @@ function HomeWhyTeksett() {
 
           <div
             className="row"
-            // style={{ padding: '120px', margin: '30px' }}
+          // style={{ padding: '120px', margin: '30px' }}
           >
             (
             <div className="col-5 d-none d-md-block d-xl-block py-3 mx-3">
@@ -825,7 +825,7 @@ function HomeWhyTeksett() {
 
           <div
             className="container-md p-5 m-md-5 row d-md-flex "
-            // style={{ padding: "60px", margin: "60px" }}
+          // style={{ padding: "60px", margin: "60px" }}
           >
             {[
               { num: "80+", text: "Satistied Customers" },

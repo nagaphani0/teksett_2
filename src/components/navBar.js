@@ -3,10 +3,9 @@ import logo from "../images/Asset 1 2.png";
 import scale from "../images/scale.png";
 import { Link } from "react-router-dom";
 
-import Hamburger from 'hamburger-react'
 export default function NavBar() {
   const [currentPage, setCurrentPage] = useState("Home");
-  const [isOpen, setOpen] = useState(false)  
+  const [open, setOpen] = useState(false)
   return (
     <div>
       <div className="row" style={{ marginLeft: "7px" }}>
@@ -31,13 +30,14 @@ export default function NavBar() {
             </div>
             <div className="m-2">
               <img
+                className=""
                 src={logo}
                 alt="logo"
                 height={"20px"}
                 style={{ margin: "2px" }}
               />
             </div>
-            <div className="m-1">
+            <div className="d-none d-md-block d-xl-block m-1">
               <img
                 src={scale}
                 alt=""
@@ -48,7 +48,7 @@ export default function NavBar() {
               />
             </div>
             <div
-              className="d-flex m-1"
+              className="d-none d-md-block d-flex m-1"
               style={{
                 borderRadius: "4px",
                 background: "rgba(234, 234, 234, 0.60)",
@@ -99,19 +99,19 @@ export default function NavBar() {
         </div>
         <div className="col-1"></div>
         <div
-                    className={` ${open ? '' : 'col d-md-block d-none'}  `}
-                    id='nav text' style={{
-                        color: '#161616',
-                        fontSize: '11px',
-                        fontFamily: 'Space Grotesk',
-                        fontStyle: 'normal',
-                        // fontWeight: 500,
-                        lineHeight: '16px',
-                        letterSpacing: '-0.4px',
-                        // padding: '0px', 
-                        marginLeft: '36px'
-                    }}>
-                    <div className={` ${open ? '' : 'd-flex'}`}>
+          className={` ${open ? '' : 'col d-md-block d-none'}  `}
+          id='nav text' style={{
+            color: '#161616',
+            fontSize: '11px',
+            fontFamily: 'Space Grotesk',
+            fontStyle: 'normal',
+            // fontWeight: 500,
+            lineHeight: '16px',
+            letterSpacing: '-0.4px',
+            // padding: '0px', 
+            marginLeft: '36px'
+          }}>
+          <div className={` ${open ? '' : 'd-flex'}`}>
             <div className="p-2">
               <Link
                 to="/"
@@ -123,7 +123,7 @@ export default function NavBar() {
                   fontWeight: currentPage === "Home" ? 700 : 500,
                 }}>
                 <div
-                  className=""
+                  className="d-none d-md-block d-xl-block"
                   style={{
                     borderRadius: "12px",
                     background: "rgba(15, 70, 245, 1)",
@@ -184,10 +184,58 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-        <div className="col-2 ">
-        <Hamburger toggled={isOpen} toggle={setOpen} />
-        {/* <div className="hamburger d-block d-md-none" onClick={() => setOpen(!open)} */}
-            style={{ marginLeft: "260px" }}>
+        <div className="col-6 col-md-2">
+
+        </div>
+        <div className="col-md-2 col ">
+
+          <div
+            className=" d-none d-md-block"
+            style={{
+              background: "#000",
+              color: "white",
+              padding: "5px",
+              fontSize: "10px",
+              fontWeight: "100",
+              lineHeight: "13px",
+              letterSpacing: "-0.3px",
+              height: "45px",
+            }}>
+            <div className="d-flex">
+              <div className="m-1">
+                <div className="">E-Mail</div>
+                <div className="">Tel.</div>
+              </div>
+              <div
+                className="p-1"
+                style={
+                  {
+                    // lineHeight: '10px',
+                    // letterSpacing: '-0.6px',
+                  }
+                }>
+                <div className="">bsetti10@gmail.com</div>
+                <div className="">+1 402 507 5290</div>
+              </div>
+              <div className="m-1">
+                <img
+                  src={scale}
+                  alt=""
+                  style={{
+                    opacity: "0.20000000298023224",
+                    background: "#000",
+                    height: "20px",
+                  }}
+                />
+              </div>
+              <div className="p-2">
+                <div className="">Contact Us</div>
+              </div>
+            </div>
+          </div>
+          <div className="hamburger d-block d-sm-block d-md-none" onClick={() => setOpen(!open)}
+
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="36"
@@ -206,52 +254,8 @@ export default function NavBar() {
                 </clipPath>
               </defs>
             </svg>
-          {/* </div> */}
-        </div>
-
-        <div
-          className="col-2 d-none d-md-block"
-          style={{
-            background: "#000",
-            color: "white",
-            padding: "5px",
-            fontSize: "10px",
-            fontWeight: "100",
-            lineHeight: "13px",
-            letterSpacing: "-0.3px",
-            height: "45px",
-          }}>
-          <div className="d-flex">
-            <div className="m-1">
-              <div className="">E-Mail</div>
-              <div className="">Tel.</div>
-            </div>
-            <div
-              className="p-1"
-              style={
-                {
-                  // lineHeight: '10px',
-                  // letterSpacing: '-0.6px',
-                }
-              }>
-              <div className="">bsetti10@gmail.com</div>
-              <div className="">+1 402 507 5290</div>
-            </div>
-            <div className="m-1">
-              <img
-                src={scale}
-                alt=""
-                style={{
-                  opacity: "0.20000000298023224",
-                  background: "#000",
-                  height: "20px",
-                }}
-              />
-            </div>
-            <div className="p-2">
-              <div className="">Contact Us</div>
-            </div>
           </div>
+
         </div>
       </div>
     </div>
