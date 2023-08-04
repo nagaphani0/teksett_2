@@ -442,19 +442,20 @@ function HomeFrentPage() {
         style={{
           backgroundImage: `url(${homefrentback})`,
         }}>
-        <div className="d-none d-md-block d-xl-block position-relative ">
+        <div className="d-none d-md-block d-lg-block position-relative ">
           <img
             src={homefrentpage}
+
             alt=""
             style={{
               // position: "absolute",
               // left: "850px",
               // top: "80px",
-              width: "auto",
-              height: "600px",
-              flexShrink: "0",
+              // width: "auto",
+              height: "570px",
+              // flexShrink: "0",
             }}
-            className="img-fluid position-absolute top-0 end-0 px-4 m-3 "
+            className="img-fluid position-absolute top-0 end-0 px-4 m-3"
           />
         </div>
 

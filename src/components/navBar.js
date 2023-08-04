@@ -48,14 +48,14 @@ export default function NavBar() {
               />
             </div>
             <div
-              className="d-none d-md-block d-flex m-1"
+              className="d-none row d-md-block d-flex m-1"
               style={{
                 borderRadius: "4px",
                 background: "rgba(234, 234, 234, 0.60)",
                 width: "50px",
                 height: "30px",
               }}>
-              <div id="globe img d-none d-md-block" className="">
+              <div id="globe img col" className="">
                 <svg
                   width="16"
                   height="16"
@@ -83,7 +83,7 @@ export default function NavBar() {
                 </svg>
               </div>
               <div
-                className="m-1"
+                className="usaText col"
                 style={{
                   color: "#161616",
                   // textAlign: 'center',

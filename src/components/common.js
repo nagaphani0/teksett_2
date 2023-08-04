@@ -62,15 +62,15 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
             {title}
           </div>
           <div
-            className=""
+            className="fs-6"
             style={{
               color: "#9C9C9C",
-              fontSize: "14px",
-              lineHeight: "24px",
+              // fontSize: "14px",
+              lineHeight: "20px",
             }}>
             {des}
           </div>
-          <div className="col-md-2 mx-3 d-md-none d-xl-none d-flex align-items-end justify-content-end link">
+          <div className="col-md-2 mx-2 d-md-none d-xl-none d-flex align-items-end justify-content-end link">
             <Link
               to={`/${mainlin}/${title.toLowerCase()}`}
               className="btn btn-dark p-2 ">
@@ -125,8 +125,8 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
         <div className="col-md-2 mx-3 d-md-flex d-none align-items-end justify-content-end link">
           <Link
             to={`/${mainlin}/${title.toLowerCase()}`}
-            className="btn btn-dark p-2 ">
-            View Details <img src={rightarrow} alt="" />
+            className="btn btn-dark p-2 m-3">
+            View Details <img src={rightarrow} alt="none" />
           </Link>
         </div>
       </div>
@@ -259,10 +259,7 @@ export function CommonPageHead({ page, title }) {
         TEksett &gt; {page}{" "}
       </p>
       <div
-        className="col-8"
-        style={{
-          fontSize: "56px",
-        }}>
+        className="col-md-9 display-4">
         {title}
       </div>
     </div>
@@ -1132,7 +1129,7 @@ export function CommonSelectedExtendedPage({
             src={pic}
             className=" img-fluid p-2 mx-2"
             alt=""
-            // height={"540px"}
+          // height={"540px"}
           />
         </div>
 

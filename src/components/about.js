@@ -50,14 +50,14 @@ export default function About() {
   return (
     <div>
       <CommonPageHead
-        title={"About: We're here to help you succeed "}
+        title={"About: We're here to help you succeed! "}
         page={"About us"}
       />
       <img
         className="img-fluid"
         src={aboutintro}
         alt="intro"
-        // height={"490px"}
+      // height={"490px"}
       />
       <div className="container p-4 m-4" style={{ fontWeight: 598 }}>
         <h1 className="m-4">Who we are</h1>
@@ -161,24 +161,25 @@ function Secondcircle({ num, text }) {
   return (
     <Zoom onMouseEnter={() => setBol(true)} onMouseLeave={() => setBol(false)}>
       <div
-        className="col-1 p-md-5 p-0 zoom-in-effect"
+        className="col-1 p-md-5 m-md-2 p-0 zoom-in-effect"
         style={
           {
             // paddingLeft: '90px', paddingTop: '60px', paddingBottom: '10px', margin: '60px'
           }
         }>
         <div
-          className="circle mx-4"
+          className="circle mx-5 px-1"
           style={{
-            borderRadius: "450px",
             backgroundImage: bol ? `url(${onetwoback})` : "",
             backgroundSize: "cover",
-
             border: bol ? "1px solid #0F46F5" : "1px solid #FFF",
-            width: "270px",
-            height: "270px",
+            // border circles adjest
+            borderRadius: "450px",
+            width: "280px",
+            height: "280px",
+            // 
             // margin: '40px',
-            padding: "",
+            // padding: "",
             // flexShrink: "0",
           }}>
           <div

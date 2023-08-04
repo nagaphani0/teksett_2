@@ -250,7 +250,7 @@ function ScrolableHistory() {
 function EmployeTestimonials() {
   return (
     <div>
-      <div id="employe testimonials" className="  container-fluid row p-3 m-3">
+      <div id="employe testimonials" className="container-fluid row p-3 m-3">
         <div className="col-10 col-md-3 m-4 ">
           <img
             // src={jacob}
@@ -268,10 +268,10 @@ function EmployeTestimonials() {
             style={{
               color: "#161616",
               fontFamily: "Barlow",
-              fontSize: "64px",
+              fontSize: "61px",
               fontStyle: "normal",
               fontWeight: "500",
-              lineHeight: "70px" /* 100% */,
+              lineHeight: "60px" /* 100% */,
               letterSpacing: "-1px",
             }}>
             Jacob S.
@@ -284,7 +284,7 @@ function EmployeTestimonials() {
               fontSize: "24px",
               fontStyle: "normal",
               fontWeight: "400",
-              lineHeight: "41.2px" /* 114.444% */,
+              lineHeight: "32.2px" /* 114.444% */,
               letterSpacing: "-0.1px",
             }}>
             "I've had the pleasure of working with Teksett for over three years
@@ -301,7 +301,7 @@ function EmployeTestimonials() {
               fontSize: "30px",
               fontStyle: "normal",
               fontWeight: "500",
-              lineHeight: "70px" /* 233.333% */,
+              lineHeight: "50px" /* 233.333% */,
               letterSpacing: "-1px",
             }}>
             (FE developer)
@@ -546,7 +546,7 @@ function Careers() {
           </div>
           {openings.map(({ role, Location, Experience }) => (
             <div className="row text-bg-dark p-2 my-4">
-              <div className="col-8 col-md-8 p-2">
+              <div className="col-7 col-md-8 p-2">
                 <div
                   className="role p-2"
                   styles={{
@@ -603,7 +603,7 @@ function Careers() {
                   />
                 </svg>
               </div>
-              <div className="col-3 col-md-3 d-flex py-3 my-3">
+              <div className="col-5 col-md-3 d-flex justify-content-center align-items-center ">
                 <div
                   className="btn d-flex"
                   style={{
