@@ -27,10 +27,10 @@ import s7 from "../images/sponsers/ibm.png";
 import s8 from "../images/sponsers/micro.png";
 import s9 from "../images/sponsers/utube.png";
 import s10 from "../images/sponsers/hp.png";
+import { Zoomm } from "./about";
 
 export default function CommonIS({ pic, title, des, points, mainlin }) {
   const [isHovered, setIsHovered] = useState(false);
-
   return (
     <div
       className="m-0"
@@ -41,7 +41,7 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
       <div className="row d-flex mx-0 p-2">
-        <div className="col col-md-4 d-flex mx-0">
+        <div className="col-xs col-md-4 col-lg-4 d-flex mx-0">
           <img
             src={pic}
             alt="none"
@@ -70,62 +70,67 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
             }}>
             {des}
           </div>
-          <div className="col-md-2 mx-2 d-md-none d-xl-none d-flex align-items-end justify-content-end link">
+          <div className="col-md-2 mx-2 d-none d-md-block d-lg-none d-xl-none d-flex align-items-end justify-content-end link">
             <Link
               to={`/${mainlin}/${title.toLowerCase()}`}
               className="btn btn-dark p-2 ">
               View Details <img src={rightarrow} alt="" />
             </Link>
           </div>
-          <div
-            className="p-md-3 d-none d-md-block d-xl-block"
-            style={{
-              // color: "#FFF",
-              fontSize: "11px",
-              fontFamily: "Space Grotesk",
-              fontWeight: "600",
-              lineHeight: "19.6px",
-              letterSpacing: "-0.2px",
-            }}>
-            Top Benefits
-          </div>
-          <div
-            className="col-md-7 d-none d-md-block d-xl-block"
-            id="points"
-            style={{ fontSize: "12px" }}>
-            {points.map((point) => (
-              <div
-                className="col m-2 w-75 d-flex"
-                style={{
-                  borderRadius: "4px",
-                  // width: "33px",
-                  background: "rgba(0, 0, 0, 0.05)",
-                }}>
-                <div className="">
-                  <svg
-                    width="11"
-                    height="11"
-                    viewBox="0 0 12 14"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <g id="Frame">
-                      <path
-                        id="Vector"
-                        d="M6 0.984375C2.688 0.984375 0 3.67237 0 6.98438C0 10.2964 2.688 12.9844 6 12.9844C9.312 12.9844 12 10.2964 12 6.98438C12 3.67237 9.312 0.984375 6 0.984375ZM4.8 9.98438L1.8 6.98438L2.646 6.13837L4.8 8.28638L9.354 3.73237L10.2 4.58437L4.8 9.98438Z"
-                        fill="rgba(15, 70, 245, 1)"
-                      />
-                    </g>
-                  </svg>
+
+          <div className="d-none d-sm-none d-md-none d-lg-block">
+
+            <div
+              className="p-md-3 d-none d-md-block d-xl-block"
+              style={{
+                // color: "#FFF",
+                fontSize: "11px",
+                fontFamily: "Space Grotesk",
+                fontWeight: "600",
+                lineHeight: "19.6px",
+                letterSpacing: "-0.2px",
+              }}>
+              Top Benefits
+            </div>
+            <div
+              className="col-md-7 "
+              id="points"
+              style={{ fontSize: "12px" }}>
+              {points.map((point) => (
+                <div
+                  className="col m-2 w-75 d-flex"
+                  style={{
+                    borderRadius: "4px",
+                    // width: "33px",
+                    background: "rgba(0, 0, 0, 0.05)",
+                  }}>
+                  <div className="">
+                    <svg
+                      width="11"
+                      height="11"
+                      viewBox="0 0 12 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <g id="Frame">
+                        <path
+                          id="Vector"
+                          d="M6 0.984375C2.688 0.984375 0 3.67237 0 6.98438C0 10.2964 2.688 12.9844 6 12.9844C9.312 12.9844 12 10.2964 12 6.98438C12 3.67237 9.312 0.984375 6 0.984375ZM4.8 9.98438L1.8 6.98438L2.646 6.13837L4.8 8.28638L9.354 3.73237L10.2 4.58437L4.8 9.98438Z"
+                          fill="rgba(15, 70, 245, 1)"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                  <div className="col ">{point}</div>
                 </div>
-                <div className="col ">{point}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
+
         </div>
-        <div className="col-md-2 mx-3 d-md-flex d-none align-items-end justify-content-end link">
+        <div className="col-md-2 mx-xs mx-md-3 mx-lg-3 d-md-none d-xs-block align-items-end justify-content-end link">
           <Link
             to={`/${mainlin}/${title.toLowerCase()}`}
-            className="btn btn-dark p-2 m-3">
+            className="btn btn-dark p-md-2 m-md-3 p-lg-2 m-lg-3">
             View Details <img src={rightarrow} alt="none" />
           </Link>
         </div>
@@ -136,15 +141,21 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
 
 export function CommonCard({ pic, title, des }) {
   return (
-    <div className="m-1">
-      <div className="card border-0" style={{ fontFamily: "Space Grotesk" }}>
+    <Zoomm className="m-1">
+
+      <div className="card border-0 zoom-in-effect" style={{ fontFamily: "Space Grotesk" }}>
         <img src={pic} className="card-img-top img-fluid" alt="Card Image" />
         <div className="card-body">
-          <h5
-            className="card-title"
-            style={{ fontSize: "20px", fontWeight: "600" }}>
+          <div
+            className="card-title fs-5"
+            style={{
+              // fontSize: "20px", 
+              fontFamily: 'Space Grotesk',
+              fontWeight: "600"
+            }}
+          >
             {title}
-          </h5>
+          </div>
           <p
             className="card-text"
             style={{
@@ -160,7 +171,7 @@ export function CommonCard({ pic, title, des }) {
           </p>
         </div>
       </div>
-    </div>
+    </Zoomm>
   );
 }
 

@@ -1,9 +1,9 @@
 import { CommonPageHead, CommonPlusOpen } from "./common";
 import aboutintro from "../images/aboutintro.png";
-import last1 from "../images/lastpage (1).png";
-import last2 from "../images/lastpage (2).png";
-import last3 from "../images/lastpage (3).png";
-import last4 from "../images/lastpage (4).png";
+// import last1 from "../images/lastpage (1).png";
+// import last2 from "../images/lastpage (2).png";
+// import last3 from "../images/lastpage (3).png";
+// import last4 from "../images/lastpage (4).png";
 import rarrow from "../images/rightarrow.png";
 // import { Col, Row } from "react-bootstrap";
 import { useState } from "react";
@@ -138,7 +138,7 @@ function Circles() {
           { num: 3, text: "competence" },
           { num: 4, text: "stability" },
         ].map(({ num, text }) => (
-          <div className="col-4 col-md-2 m-md-3 m-1 p-4">
+          <div className="col-xs col-md-2 col-lg-2 m-md-3 m-lg-1 m-xs-0 p-4">
             <Secondcircle num={num} text={text} />
           </div>
         ))}
@@ -147,9 +147,7 @@ function Circles() {
   );
 }
 
-function Secondcircle({ num, text }) {
-  const [bol, setBol] = useState(false);
-  const Zoom = styled.div`
+export const Zoomm = styled.div`
     .zoom-in-effect {
       transition: transform 0.2s; /* Set the transition time for smooth effect */
     }
@@ -158,8 +156,11 @@ function Secondcircle({ num, text }) {
       transform: scale(1.03); /* Increase the scale to zoom in on hover */
     }
   `;
+function Secondcircle({ num, text }) {
+  const [bol, setBol] = useState(false);
+
   return (
-    <Zoom onMouseEnter={() => setBol(true)} onMouseLeave={() => setBol(false)}>
+    <Zoomm onMouseEnter={() => setBol(true)} onMouseLeave={() => setBol(false)}>
       <div
         className="col-1 p-md-5 m-md-2 p-0 zoom-in-effect"
         style={
@@ -217,35 +218,35 @@ function Secondcircle({ num, text }) {
           </div>
         </div>
       </div>
-    </Zoom>
+    </Zoomm>
   );
 }
 
-function LastInPage({ model }) {
-  const cards = [
-    {
-      pic: last3,
-      title: "Accenture - Cloud Transformation",
-      des: "How the teksett team collaborated with accenture in their cloud transformation journey",
-    },
-    {
-      pic: last4,
-      title: "Accenture - Cloud Transformation",
-      des: "How the teksett team collaborated with accenture in their cloud transformation journey",
-    },
-    {
-      pic: last2,
-      title: "Accenture - Cloud Transformation",
-      des: "How the teksett team collaborated with accenture in their cloud transformation journey",
-    },
-    {
-      pic: last1,
-      title: "Accenture - Cloud Transformation",
-      des: "How the teksett team collaborated with accenture in their cloud transformation journey",
-    },
-  ];
-  return <CommonLastInPage data={cards} model={model} />;
-}
+// function LastInPage({ model }) {
+//   const cards = [
+//     {
+//       pic: last3,
+//       title: "Accenture - Cloud Transformation",
+//       des: "How the teksett team collaborated with accenture in their cloud transformation journey",
+//     },
+//     {
+//       pic: last4,
+//       title: "Accenture - Cloud Transformation",
+//       des: "How the teksett team collaborated with accenture in their cloud transformation journey",
+//     },
+//     {
+//       pic: last2,
+//       title: "Accenture - Cloud Transformation",
+//       des: "How the teksett team collaborated with accenture in their cloud transformation journey",
+//     },
+//     {
+//       pic: last1,
+//       title: "Accenture - Cloud Transformation",
+//       des: "How the teksett team collaborated with accenture in their cloud transformation journey",
+//     },
+//   ];
+//   return <CommonLastInPage data={cards} model={model} />;
+// }
 
 export function CommonLastInPage({ data, model }) {
   return (
@@ -269,7 +270,7 @@ export function CommonLastInPage({ data, model }) {
       </div>
       <div className="row">
         {data.map(({ title, des, pic }) => (
-          <div className="col-6 col-md card border-0">
+          <div className="col-xs col-sm-6 col-md card border-0">
             <img
               src={pic}
               className="card-img-top img-fluid"

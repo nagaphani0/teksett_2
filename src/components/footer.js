@@ -3,18 +3,18 @@ import { Sponsers } from './common';
 
 export default function Footer() {
     return (
-        <div className="" style={{
+        <div className=" " style={{
             background: "rgba(13, 15, 23, 1)",
         }}>
-            <div className=''
+            <div className='container'
                 style={{
                     color: "#FFFFFF",
                     padding: "65px",
                 }}
             >
-                <div className="row p-3">
+                <div className="row p-md-1 p-sm-1 p-xs-1 m-xs-3">
                     {/* col for mobile col-md for desktop */}
-                    <div className="col-sm-8 col-md-3 px-1 mx-2">
+                    <div className="col-xs col-sm-8 col-md-3 px-1 mx-2">
                         <div className="d-flex">
 
                             <div
@@ -72,8 +72,8 @@ export default function Footer() {
                         }} >14301 FNB Parkway Ste 100
                             Omaha NE 68154</div>
                     </div>
-                    <div className="col-6 col-md-2 mx-md-1">
-                        <h5 className="p-1">About</h5>
+                    <div className="col-xs col-sm-6 col-md-2 mx-md-2">
+                        <h5 className="p-md-1 p-sm-1 p-xs-1">About</h5>
                         <div
                             className="d-flex flex-column"
                             style={{
@@ -90,17 +90,19 @@ export default function Footer() {
                             <div className="p-0">Case studies</div>
                         </div>
                     </div>
-                    <div className="col-6 col-md-2 mx-md-2">
-                        <h5 className="p-1">Services</h5>
+                    <div className="col-xs col-sm-6 col-md-2 mx-md-2">
+                        <h5 className="p-md-1 p-sm-1 p-xs-1">Services</h5>
                         <div
-                            className="d-flex flex-column"
+                            className="d-flex flex-column w-100"
                             style={{
                                 color: 'rgba(255, 255, 255, 0.60)',
                                 fontSize: '14px',
                                 fontFamily: 'Barlow',
                                 fontWeight: '500',
                                 lineHeight: '33px',
-                                letterSpacing: '0.45px'
+                                letterSpacing: '0.45px',
+                                // width: '250px',
+
                             }}>
                             <div className="p-0">IT Solutions Delivery</div>
                             <div className="p-0">Staff Augmentation Services</div>
@@ -115,8 +117,8 @@ export default function Footer() {
                             <div className="p-0">Data Engineering</div>
                         </div>
                     </div>
-                    <div className="col-7 col-md-2 px-2 mx-md-2">
-                        <h5 className="p-1">Domains</h5>
+                    <div className="col-xs col-sm-7 col-md-2 mx-md-2">
+                        <h5 className="p-md-1 p-sm-1 p-xs-1">Domains</h5>
                         <div
                             className="d-flex flex-column"
                             style={{
@@ -139,8 +141,8 @@ export default function Footer() {
                             <div className="p-0">Insurance</div>
                         </div>
                     </div>
-                    <div className="col-5 col-md-2 px-2 mx-md-2">
-                        <h5 className="p-1">Insights</h5>
+                    <div className="col-xs col-sm-5 col-md-2  mx-md-2">
+                        <h5 className="p-md-1 p-sm-1 p-lg">Insights</h5>
                         <div
                             className="d-flex flex-column"
                             style={{
@@ -159,7 +161,6 @@ export default function Footer() {
                             <div className="p-0">Blogs & Articles</div>
                         </div>
                     </div>
-
                 </div>
             </div >
             <Sponsers />

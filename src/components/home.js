@@ -43,9 +43,9 @@ export default function Home() {
   return (
     <div>
       <HomeFrentPage />
-      <div className="row my-2">
+      <div className="row ">
         <div
-          className="col-3 col-md-1 px-4 my-2"
+          className="col-3 col-md-1 ms-3 "
           style={{
             color: "#707070",
             fontFamily: "Space Grotesk",
@@ -53,7 +53,7 @@ export default function Home() {
             fontSize: "11px",
             fontStyle: "normal",
             fontWeight: "400",
-            lineHeight: "19.6px" /* 140% */,
+            // lineHeight: "19.6px" /* 140% */,
             letterSpacing: "-0.2px",
             textTransform: "uppercase",
           }}>
@@ -134,7 +134,7 @@ function HomeIndustries() {
       />
       <div className="row p-3 m-2">
         {box.map(({ pic, title, des }) => (
-          <div className="col-6 col-md-4">
+          <div className="col-xs col-sm-4 col-md-4">
             <CommonCard pic={pic} title={title} des={des} />
           </div>
         ))}
@@ -438,95 +438,94 @@ function HomeFrentPage() {
   return (
     <div className="">
       <div
-        className="vh-100"
+        className="min-vh-lg-100 d-md-block d-lg-block"
         style={{
           backgroundImage: `url(${homefrentback})`,
+          backgroundSize: "cover", // Ensure the background image covers the entire container
+          backgroundPosition: "center", // Center the background image
+          backgroundRepeat: "no-repeat", // Prevent background image repetition
         }}>
-        <div className="d-none d-md-block d-lg-block position-relative ">
+
+
+        <div className="position-relative">
+          {/* lg my screen*/}
           <img
             src={homefrentpage}
-
             alt=""
             style={{
-              // position: "absolute",
-              // left: "850px",
-              // top: "80px",
-              // width: "auto",
               height: "570px",
-              // flexShrink: "0",
             }}
-            className="img-fluid position-absolute top-0 end-0 px-4 m-3"
+            className="img-fluid position-absolute top-0 end-0 px-4 m-3 d-lg-block d-md-none d-none"
           />
+
         </div>
 
-        <div
-          className=""
-          style={{
-            position: "absolute",
-            top: "300px",
-            left: "100px",
-          }}>
-          <div
-            className=""
-            style={{
-              borderRadius: "4px",
-              padding: "0px",
-              background: "#EFEFEF",
-              width: "130px",
-              fontSize: "12px",
-            }}>
-            Your Reliable IT Partner
-          </div>
-          <div
-            className="col-sm-10 col-md-7"
-            style={{
-              color: "#161616",
-              fontSize: "55px",
-              // fontFamily: 'Barlow',
-              lineHeight: "60px",
-              // letterSpacing: '-1.2px'
-            }}>
-            <span style={{ color: "#707070" }}>Modern IT solutions {"  "}</span>
-            to scale your Business
-          </div>
-          <div className="row">
+
+        <div className="d-flex justify-content-start align-items-center vh-100 mx-4 px-4">
+          <div className=" ">
+
             <div
-              className="btn col-3"
+              className=""
               style={{
-                fontSize: "11px",
-                margin: "12px",
-                padding: "2px",
-                width: "120px",
-                background: "#000",
-                color: "white",
+                borderRadius: "4px",
+                padding: "0px",
+                background: "#EFEFEF",
+                width: "130px",
+                fontSize: "12px",
               }}>
-              Get in Touch
-              <img
-                src={scale}
-                alt=""
-                style={{
-                  background: "#373737",
-                  height: "15px",
-                  margin: "6px",
-                }}
-              />
-              <img
-                src={rightarrow}
-                alt="arrow"
-                style={{ margin: "0px", height: "10px" }}
-              />
+              Your Reliable IT Partner
             </div>
-            {/* <div className="col-1 btn" style={{
+            <div className="col-sm-10 col-lg-7"
+              style={{
+                color: "#161616",
+                fontSize: "55px",
+                lineHeight: "60px",
+                // fontFamily: 'Inter'
+                // letterSpacing: '-1.2px'
+              }}>
+              <span style={{ color: "#707070" }}>Modern IT solutions {"  "}</span>
+              to scale your Business
+            </div>
+            <div className="row ">
+              <div
+                className="btn col-3"
+                style={{
+                  fontSize: "11px",
+                  margin: "12px",
+                  padding: "2px",
+                  width: "120px",
+                  background: "#000",
+                  color: "white",
+                }}>
+                Get in Touch
+                <img
+                  src={scale}
+                  alt=""
+                  style={{
+                    background: "#373737",
+                    height: "15px",
+                    margin: "6px",
+                  }}
+                />
+                <img
+                  src={rightarrow}
+                  alt="arrow"
+                  style={{ margin: "0px", height: "10px" }}
+                />
+              </div>
+              {/* <div className="col-1 btn" style={{
               borderRadius: '4px',
               padding: '7px',
               // width: '10px',
               marginLeft: '10px',
               border: '1px solid #CECECE'
             }}>Services</div> */}
+            </div>
           </div>
         </div>
       </div>
-    </div>
+
+    </div >
   );
 }
 
@@ -723,6 +722,7 @@ function HomeWhyTeksett() {
     },
   ];
   const [dataa, setDataa] = useState("Exceptional Expertise");
+  console.log(dataa);
   var playVideoOF = homevid;
   if (dataa) {
     playVideoOF = data.filter(({ title }) => title === dataa)[0].vid;
@@ -835,7 +835,7 @@ function HomeWhyTeksett() {
               { num: "10+", text: "Industry Verticals" },
             ].map(({ num, text }) => (
               <div
-                className="col text-white m-2 px-md-4 py-md-2 "
+                className="col col-sm-4 col-md text-white m-2 px-md-4 py-md-2"
                 style={{
                   background: "rgba(230, 230, 230, 0.10)",
                   // width: '218px',
@@ -870,6 +870,7 @@ function VideoOnHover({ title, des }) {
   // const [open, setOpen] = useState(false);
   const [dataa, setDataa] = useContext(MyVidContext);
   // const [glow, setGlow] = useState(false);
+  console.log(dataa);
 
   function onEnter() {
     setDataa(title);
@@ -949,7 +950,7 @@ function HomeTestimonials() {
         <div className="col ">
           <div className="m-4 p-1">
             <div
-              className=" pb-5"
+              className=" py-5"
               style={{
                 color: "rgba(255, 255, 255, 0.87)",
                 fontSize: "20px",
