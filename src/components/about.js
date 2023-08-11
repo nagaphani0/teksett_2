@@ -67,7 +67,7 @@ export default function About() {
         <div className="row">
           <div className="col-4"></div>
           <div
-            className="col-md m-md-2"
+            className="col-lg m-lg-2"
             style={{
               fontSize: "20px",
               // fontFamily: 'Barlow',
@@ -138,7 +138,7 @@ function Circles() {
           { num: 3, text: "competence" },
           { num: 4, text: "stability" },
         ].map(({ num, text }) => (
-          <div className="col-xs col-md-2 col-lg-2 m-md-3 m-lg-1 m-xs-0 p-4">
+          <div className="col col-sm-5 col-lg-2 m-lg-3 m-sm-1 p-lg-4">
             <Secondcircle num={num} text={text} />
           </div>
         ))}
@@ -162,7 +162,7 @@ function Secondcircle({ num, text }) {
   return (
     <Zoomm onMouseEnter={() => setBol(true)} onMouseLeave={() => setBol(false)}>
       <div
-        className="col-1 p-md-5 m-md-2 p-0 zoom-in-effect"
+        className="col-1 p-lg-5 m-lg-2 p-0 zoom-in-effect"
         style={
           {
             // paddingLeft: '90px', paddingTop: '60px', paddingBottom: '10px', margin: '60px'
@@ -270,7 +270,7 @@ export function CommonLastInPage({ data, model }) {
       </div>
       <div className="row">
         {data.map(({ title, des, pic }) => (
-          <div className="col-xs col-sm-6 col-md card border-0">
+          <div className="col-xs col-sm-6 col-lg card border-0">
             <img
               src={pic}
               className="card-img-top img-fluid"
@@ -341,9 +341,9 @@ export function CommonLastInPage({ data, model }) {
 
 export function AboutLast() {
   return (
-    <div className="p-2 p-md-4 m-md-5">
+    <div className="p-2 p-lg-4 m-lg-5 container-sm">
       <div
-        className="col-12 col-md-9 col-xl-9 p-md-2 m-md-2"
+        className="col col-lg-9 p-lg-2 m-lg-2"
         style={{
           color: "#161616",
           fontFamily: "Barlow",
@@ -355,20 +355,20 @@ export function AboutLast() {
         }}>
         We are happy to work with largest global brands
       </div>
-      <div className="row">
-        <div className="col-md-4">
+      <div className="row ">
+        <div className="col-lg-4 ">
           <AboutSponsers />
         </div>
         <div className="col m-3 py-2">
           <div className="row bg-black p-4 ">
-            <div className="col-md-6">
+            <div className="col-lg-6">
               <img
                 className="img-fluid"
                 src="https://s3-alpha-sig.figma.com/img/33b5/1337/6a8a886fe03f86969aca342bcea0f8ad?Expires=1691366400&Signature=dHi~XpknQAHSUoPtw3Os-dvhtq-092h--b9gIujtn5taYd0FAd8vSmHDIXJD2rxAVttRMFsNnL~hPzYgpeBjZSZzhK~Ahrx0ZRFEv2SNI1IlpAZNRaZGfwhTpdtYkRqvG4IaaFgS00RaEFZgiS-2HsO~ACq4OZvHEZrbNBycqtIhKznhnxhWWF82DmMhX-f0apUpWsEfokwH4kVQBfdt~UQwri2~ktbx3zuApLNphDz-xiO24HfAm683WtMt15lyRnJu21vgWxqx4PruGG23qiqTgOlzvrAW1G3yMK-vOiERjoyJVF9~b6ZdQIgaju724XF~eZXqVLgvkmPaJ7cCSQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
                 alt=""
               />
             </div>
-            <div className="col col-md-6">
+            <div className="col col-lg-6">
               <div
                 className="py-2"
                 style={{
@@ -428,7 +428,7 @@ function AboutSponsers() {
     <div>
       <div className="row bg-black">
         {sponsers.map((spon) => (
-          <div key={spon} className="col-6 py-1">
+          <div key={spon} className="col-6 py-1 d-flex justify-content-center ">
             <img
               className="img-fluid p-2 m-2"
               style={

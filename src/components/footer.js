@@ -12,25 +12,12 @@ export default function Footer() {
                     padding: "65px",
                 }}
             >
-                <div className="row p-md-1 p-sm-1 p-xs-1 m-xs-3">
-                    {/* col for mobile col-md for desktop */}
-                    <div className="col-xs col-sm-8 col-md-3 px-1 mx-2">
+                <div className="row p-lg-1 p-sm-1 p-xs-1 m-xs-3">
+                    {/* col for mobile col-lg for desktop */}
+                    <div className="col-lg-3 px-1 mx-2 m-2">
                         <div className="d-flex">
-
-                            <div
-                                className=" display-5"
-                                style={{
-                                    // leadingTrim: 'both',
-                                    // textEdge: 'cap',
-                                    // fontSize: '50px',
-                                    // fontFamily: 'Barlow',
-                                    fontWeight: '600',
-                                    // lineHeight: '40px'
-                                }}>teksett</div>
-                            <div className="m-3" style={{
-                                // width: '60%'
-
-                            }} >
+                            <div className="display-5 fw-bold">teksett</div>
+                            <div className="m-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="31" height="35" viewBox="0 0 51 45" fill="none">
                                     <g clip-path="url(#clip0_2991_17253)">
                                         <path d="M0.826172 0H27.5355L45.9564 18.7855L29.6546 26.5155H27.832L0.826172 0Z" fill="url(#paint0_linear_2991_17253)" />
@@ -58,10 +45,9 @@ export default function Footer() {
                                         </clipPath>
                                     </defs>
                                 </svg>
-
                             </div>
                         </div>
-                        <div className=" p-1 col-7" style={{
+                        <div className="p-1 col-7" style={{
                             color: 'rgba(255, 255, 255, 0.60)',
                             fontFamily: 'Barlow',
                             fontSize: '14px',
@@ -72,10 +58,10 @@ export default function Footer() {
                         }} >14301 FNB Parkway Ste 100
                             Omaha NE 68154</div>
                     </div>
-                    <div className="col-xs col-sm-6 col-md-2 mx-md-2">
-                        <h5 className="p-md-1 p-sm-1 p-xs-1">About</h5>
+                    <div className="col-xs col-sm-6 col-lg-2 mx-lg-2 p-2">
+                        <h5 className="p-lg-1 p-sm-1 p-xs-1">About</h5>
                         <div
-                            className="d-flex flex-column"
+                            className="d-none d-sm-block d-lg-block d-flex flex-column flex-column"
                             style={{
                                 color: 'rgba(255, 255, 255, 0.60)',
                                 fontSize: '14px',
@@ -90,14 +76,14 @@ export default function Footer() {
                             <div className="p-0">Case studies</div>
                         </div>
                     </div>
-                    <div className="col-xs col-sm-6 col-md-2 mx-md-2">
-                        <h5 className="p-md-1 p-sm-1 p-xs-1">Services</h5>
+                    <div className="col-xs col-sm-6 col-lg-2 mx-lg-2">
+                        <h5 className="p-lg-1 p-sm-1 p-xs-1">Services</h5>
                         <div
-                            className="d-flex flex-column w-100"
+                            className="d-none d-sm-block d-lg-block d-flex flex-column w-100"
                             style={{
                                 color: 'rgba(255, 255, 255, 0.60)',
                                 fontSize: '14px',
-                                fontFamily: 'Barlow',
+                                // fontFamily: 'Barlow',
                                 fontWeight: '500',
                                 lineHeight: '33px',
                                 letterSpacing: '0.45px',
@@ -117,10 +103,10 @@ export default function Footer() {
                             <div className="p-0">Data Engineering</div>
                         </div>
                     </div>
-                    <div className="col-xs col-sm-7 col-md-2 mx-md-2">
-                        <h5 className="p-md-1 p-sm-1 p-xs-1">Domains</h5>
+                    <div className="col-xs col-sm-7 col-lg-2 mx-lg-2">
+                        <h5 className="p-lg-1 p-sm-1 p-xs-1">Domains</h5>
                         <div
-                            className="d-flex flex-column"
+                            className="d-none d-sm-block d-lg-block d-flex flex-column w-100"
                             style={{
                                 color: 'rgba(255, 255, 255, 0.60)',
                                 fontSize: '14px',
@@ -141,10 +127,10 @@ export default function Footer() {
                             <div className="p-0">Insurance</div>
                         </div>
                     </div>
-                    <div className="col-xs col-sm-5 col-md-2  mx-md-2">
-                        <h5 className="p-md-1 p-sm-1 p-lg">Insights</h5>
+                    <div className="col-xs col-sm-5 col-lg-2  mx-lg-2">
+                        <h5 className="p-lg-1 p-sm-1 p-lg">Insights</h5>
                         <div
-                            className="d-flex flex-column"
+                            className="d-none d-sm-block d-lg-block d-flex flex-column"
                             style={{
                                 color: 'rgba(255, 255, 255, 0.60)',
 
@@ -163,7 +149,25 @@ export default function Footer() {
                     </div>
                 </div>
             </div >
+            <div className=" m-3 p-4" style={{
+                color: '#707070',
+                fontFamily: 'Space Grotesk',
+                fontSize: '16px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '19.6px', /* 122.5% */
+                letterSpacing: '-0.2px',
+                textTransform: 'uppercase',
+            }} >Our Clients</div>
             <Sponsers />
+            <div className="m-2 p-2" style={{
+                color: 'rgba(255, 255, 255, 0.60)',
+                fontFamily: 'Space Grotesk',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: '30.4px'
+            }}>© Copyright 2022 by Teksett.</div>
         </div >
     )
 }

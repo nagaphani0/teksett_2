@@ -39,7 +39,8 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
         color: isHovered ? "#FFFFFF" : "#161616",
       }}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}>
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="row d-flex mx-0 p-2">
         <div className="col-xs col-md-4 col-lg-4 d-flex mx-0">
           <img
@@ -58,7 +59,8 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
                 // lineHeight: "80px",
                 // letterSpacing: "-1.2px",
               }
-            }>
+            }
+          >
             {title}
           </div>
           <div
@@ -67,19 +69,20 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
               color: "#9C9C9C",
               // fontSize: "14px",
               lineHeight: "20px",
-            }}>
+            }}
+          >
             {des}
           </div>
           <div className="col-md-2 mx-2 d-none d-md-block d-lg-none d-xl-none d-flex align-items-end justify-content-end link">
             <Link
               to={`/${mainlin}/${title.toLowerCase()}`}
-              className="btn btn-dark p-2 ">
+              className="btn btn-dark p-2 "
+            >
               View Details <img src={rightarrow} alt="" />
             </Link>
           </div>
 
           <div className="d-none d-sm-none d-md-none d-lg-block">
-
             <div
               className="p-md-3 d-none d-md-block d-xl-block"
               style={{
@@ -89,13 +92,11 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
                 fontWeight: "600",
                 lineHeight: "19.6px",
                 letterSpacing: "-0.2px",
-              }}>
+              }}
+            >
               Top Benefits
             </div>
-            <div
-              className="col-md-7 "
-              id="points"
-              style={{ fontSize: "12px" }}>
+            <div className="col-md-7 " id="points" style={{ fontSize: "12px" }}>
               {points.map((point) => (
                 <div
                   className="col m-2 w-75 d-flex"
@@ -103,14 +104,16 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
                     borderRadius: "4px",
                     // width: "33px",
                     background: "rgba(0, 0, 0, 0.05)",
-                  }}>
+                  }}
+                >
                   <div className="">
                     <svg
                       width="11"
                       height="11"
                       viewBox="0 0 12 14"
                       fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
                       <g id="Frame">
                         <path
                           id="Vector"
@@ -125,12 +128,12 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
               ))}
             </div>
           </div>
-
         </div>
-        <div className="col-md-2 mx-xs mx-md-3 mx-lg-3 d-md-none d-xs-block align-items-end justify-content-end link">
+        <div className="col-md-2 mx-xs mx-md-3 mx-lg-3 d-lg-none d-xs-block align-items-end justify-content-end link">
           <Link
             to={`/${mainlin}/${title.toLowerCase()}`}
-            className="btn btn-dark p-md-2 m-md-3 p-lg-2 m-lg-3">
+            className="btn btn-dark p-lg-2 m-lg-3 p-lg-2 m-lg-3"
+          >
             View Details <img src={rightarrow} alt="none" />
           </Link>
         </div>
@@ -141,17 +144,19 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
 
 export function CommonCard({ pic, title, des }) {
   return (
-    <Zoomm className="m-1">
-
-      <div className="card border-0 zoom-in-effect" style={{ fontFamily: "Space Grotesk" }}>
+    <Zoomm className="">
+      <div
+        className="card border-1 zoom-in-effect"
+        style={{ fontFamily: "Space Grotesk" }}
+      >
         <img src={pic} className="card-img-top img-fluid" alt="Card Image" />
         <div className="card-body">
           <div
             className="card-title fs-5"
             style={{
-              // fontSize: "20px", 
-              fontFamily: 'Space Grotesk',
-              fontWeight: "600"
+              // fontSize: "20px",
+              fontFamily: "Space Grotesk",
+              fontWeight: "600",
             }}
           >
             {title}
@@ -166,7 +171,8 @@ export function CommonCard({ pic, title, des }) {
               // fontWeight: '400',
               // lineHeight: '-0.3px',
               letterSpacing: "-0.6px",
-            }}>
+            }}
+          >
             {des}
           </p>
         </div>
@@ -189,7 +195,8 @@ export function Common() {
           lineHeight: "12px",
           letterSpacing: "1px",
           textTransform: "uppercase",
-        }}>
+        }}
+      >
         Blogs & Articles
       </div>
       <div className="">Latest Insights</div>
@@ -199,7 +206,8 @@ export function Common() {
           height="5"
           viewBox="0 0 51 5"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="M3.48438 5C4.86509 5 5.98438 3.88071 5.98438 2.5C5.98438 1.11929 4.86509 0 3.48438 0C2.10366 0 0.984375 1.11929 0.984375 2.5C0.984375 3.88071 2.10366 5 3.48438 5Z"
             fill="#373737"
@@ -265,14 +273,12 @@ export function CommonPageHead({ page, title }) {
           // letterSpacing: '1px',
           textTransform: "uppercase",
           width: "100px",
-        }}>
+        }}
+      >
         {" "}
         TEksett &gt; {page}{" "}
       </p>
-      <div
-        className="col-md-9 display-4">
-        {title}
-      </div>
+      <div className="col-lg-9 display-4">{title}</div>
     </div>
   );
 }
@@ -281,7 +287,7 @@ export function Sponsers() {
   // const sponsers = [
   //   "https://s3-alpha-sig.figma.com/img/cf6f/a85d/e82a601c82e3a8308f145555e6b17235?Expires=1691366400&Signature=bcbC8ZsiG4uPpl4EkdNQcUbo70IYzIj9uyxP39bsI3IGR-v78q8DKwdZt-~fmwUSajTuk3klf0kREuVfntmae~CFtsqf6oZKWxjI3XYkH~DA0Z2L4NCUVBXxejI51310SdZginJroeF93pp00W-LVLP0mk2OqSvI0JRmBgOzyJr1ZPJNhzS5prTu~CGJ1JW~ZC1GuheJgMG2WbmqHTOatzIKHpYvkPZ1qwKkH9n2hamISe0fDxf~avnsbF5AyGibWjIq18CoJU~aJkP3br5vdVOHao~mjQDc-kYPWKHasl3A1kK2WyEChR4DJCGF6RKCNJUkt63VZ6-nkbK0BAKt4w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   //   "https://s3-alpha-sig.figma.com/img/adc1/2c8e/575610c2a7178b8fb8f717282cea8a44?Expires=1691366400&Signature=IrROEklXDvJp4T093E2dqPwQLVDN2nTKa58fAGIbU5KeS7y7vGKRgGFzDuC5h7ndanEs78bW18UbMW6zoJ-EfLJyiQQOac0niKlNEp6dgZvZyX4v0Bxft38RxSmv5B-xlCmvw33m~CXymoXZEx5T6f3E6nXq5~tHVlg8~2z86qlVLed3COiR6VJUZcPRcC~idVRUztoMQ28Tzz-z6nXw1ec6C1ssUxUwfl-RIhHSK74f4CcOFk4ZurP2B6XkzbjvYHajCcgz~yoqOdzEfk65IWOZiPISIwogm5mMai3AtIjj-LjegqSV9xKb8KEmC8UkhOLcvONs7DLtwpLRipEtZw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
-  //   "https://s3-alpha-sig.figma.com/img/720b/3fa2/73ff3e798162e31f8c92c7bc1de25f3d?Expires=1691366400&Signature=jaJpkYwPqK9HABLnoalxXKqhvzSC8sHJdF4B-tP~AxGDpezr9zNV4ZbrWmCEw0H11f0fHuMFTgka5Um54C1PJaBsEX4XUy4axYlgoE3MzjCWYdIGcsSmSPa2tr60IHK3BxICZ2CzAHAf7gA6wu8r~7R0P~P-YYuGQ2QV1yCXxct-Eu6GvTsgRjA7wvrk55BRy-BsncvUHfHt2RGTf6lqcRS6nb3MMQDpWVG8a1lnSNBTIKTbd1mNsZKWcEx6QImFHSRJ4UpTDcZ6pC39dE-rO78x4HnBEZkhnU9FSY0Wi3qDtXZ2lM2p8Kb40ZgHjdQF90pOIzcMD5sZpzWi8sGLpw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+  //   "https://s3-alpha-sig.figma.com/img/720b/3fa2/73ff3e798162e31f8c92c7bc1de25f3d?Expires=1691366400&Signature=jaJpkYwPqK9HABLnoalxXKqhvzSC8sHJdF4B-tP~AxGDpezr9zNV4ZbrWmCEw0H11f0fHuMFTgka5Um54C1PJaBsEX4XUy4axYlgoE3MzjCWYdIGcsSmSPa2tr60IHK3BxICZ2CzAHAf7gA6wu8r~7R0P~P-YYuGQ2QV1yCXxct-Eu6GvTsgRjA7wvrk55BRy-BsncvUHfHt2RGTf6lqcRS6nb3MMQDpWVG8a1lnSNBTIKTbd1mNsZKWcEx6QImFHSRJ4UpTDcZ6pC39dE-rO78x4HnBEZkhnU9FSY0Wi3qDtXZ2lM2p8Kb40ZgHjdQF90pOIzclg5sZpzWi8sGLpw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   //   "https://s3-alpha-sig.figma.com/img/3a11/acb3/2d5b93d19aaecd21ea52a1a63b9c6cfe?Expires=1691366400&Signature=hBWZtUsAwJL7jS7Cait2XqmeguG0pp5kv4xj6gkL-t4xN6spFy7Wbu7GpgONuDiCw8g-cotMh0Ip8OT9dA1cFmzmQsTOarbfJTteyN8jbrfUGrnytjDqoH1mYiyQZHWzdpcHMJWRxzUCtUyqKmu1ekoMRdsMe4bvI06t9HwHx44UcjKeZ4v~eQVLKFMHGKtKeH2AK6aKz0MM2f2pieRQaF-gbWiH87~KYO7h5y8ltdDwU4xiUZyw4T2zJe4CMULYTQEYLPCZtYr9lpqI-bYinFP5c1AWd1JWKFxJvb38Mc76IDiTcAcxlapDiX536yPCXxJdkQ4Ox7f-SEg8nRt5~w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
   //   // s4,
   //   "https://s3-alpha-sig.figma.com/img/fdee/fe4b/227fda0ba1f628e56a460d61469387a8?Expires=1691366400&Signature=GDdttwpNT6jtWXikQAKN4vNu6i1IK-lkEf37BXEh2WBaSVxYjv3KUI8zsI~SHKuzZ~l51yRIhaR1iPnr8VlQxtRHvbAtcErm6cmoQyeRO6aSgisljRh22kCkhLIJPtAoNrRNVzkuTLi79bwhwWzIUiurGQFpelUUMU3FEqc~Tp2xxtUKAr0q5556XGACkx6Th~fjI9KF4Ysa8Ev32KvyYM3onkPT1ANc-20zSdYQ9zR~WzLHIA8LUbnulef2BIB7-SSEUuFlOuk2DTPgw7T3Qgl2k0LaIYffK7yshGuzmEmsJDixKVjLsSf1tgy~Z6xWsKNP2yH7h7X1PElfOPojRQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
@@ -294,10 +300,11 @@ export function Sponsers() {
 
   const sponsers = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
   const [displayedSponsors, setDisplayedSponsors] = useState([]);
+  // console.log("displayedSponsors", displayedSponsors[0]);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 768) {
         // Display fewer sponsors on mobile
         setDisplayedSponsors(sponsers.slice(0, 3));
       } else {
@@ -314,33 +321,98 @@ export function Sponsers() {
     };
   }, []);
   return (
-    <div>
-      <div className={`d-flex img`}>
-        {displayedSponsors.map((pic, index) => (
-          <div
-            key={index}
-            className={`col img `}
-            style={
-              {
-                // width: "20px",
-                // height: "10px",
-                // maxHeight: "0px",
-              }
-            }>
-            <img
-              className="img-fluid"
-              style={{
-                maxWidth: "105px", // Set the maximum width of the image
-                maxHeight: "40px",
-                // width: "105px",
-                // height: "40px",
-                // objectFit: "cover",
-              }}
-              alt=""
-              src={pic}
-            />
-          </div>
-        ))}
+    <div className=" ">
+      <div className="img d-flex justify-content-between align-items-center">
+        <img
+          className="cico"
+          style={{
+            maxWidth: "65px",
+            maxHeight: "35px",
+          }}
+          alt="none"
+          src={displayedSponsors[0]}
+        />
+        <img
+          className="google"
+          style={{
+            maxWidth: "105px",
+            maxHeight: "65px",
+          }}
+          alt="none"
+          src={displayedSponsors[1]}
+        />
+        <img
+          className=" oracle"
+          style={{
+            maxWidth: "100px",
+            maxHeight: "55px",
+          }}
+          alt="none"
+          src={displayedSponsors[2]}
+        />
+        <img
+          className="amazon "
+          style={{
+            maxWidth: "100px",
+            maxHeight: "55px",
+          }}
+          alt="none"
+          src={displayedSponsors[3]}
+        />
+        <img
+          className=" dell"
+          style={{
+            maxWidth: "80px",
+            maxHeight: "55px",
+          }}
+          alt="none"
+          src={displayedSponsors[4]}
+        />
+        <img
+          className="intel"
+          style={{
+            maxWidth: "75px",
+            maxHeight: "35px",
+          }}
+          alt="none"
+          src={displayedSponsors[5]}
+        />
+        <img
+          className="ibm"
+          style={{
+            maxWidth: "80px",
+            maxHeight: "25px",
+          }}
+          alt="none"
+          src={displayedSponsors[6]}
+        />
+        <img
+          className="img-fluid microsoft"
+          style={{
+            maxWidth: "105px",
+            maxHeight: "40px",
+          }}
+          alt="none"
+          src={displayedSponsors[7]}
+        />
+        <img
+          className="img-fluid youtube"
+          style={{
+            maxWidth: "105px",
+            maxHeight: "40px",
+          }}
+          alt="none"
+          src={displayedSponsors[8]}
+        />
+        <img
+          className="img-fluid hp"
+          style={{
+            maxWidth: "105px",
+            maxHeight: "40px",
+          }}
+          alt="none"
+          src={displayedSponsors[9]}
+        />
       </div>
     </div>
   );
@@ -353,14 +425,16 @@ export function CommonPlusOpen({ question, Answer }) {
       div
       className="row"
       onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}>
-      <div className="col-1 m-md-3" style={{ width: "40px", height: "10px" }}>
+      onMouseLeave={() => setOpen(false)}
+    >
+      <div className="col-1 m-lg-3" style={{ width: "40px", height: "10px" }}>
         <svg
           width="48"
           height="38"
           viewBox="0 0 48 48"
           fill="none"
-          xmlns="http://www.w3.org/2000/svg">
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <g clip-path="url(#clip0_61_433)">
             <path
               d="M38 26H26V38H22V26H10V22H22V10H26V22H38V26Z"
@@ -375,8 +449,9 @@ export function CommonPlusOpen({ question, Answer }) {
         </svg>
       </div>
       <div
-        className="col mx-3 m-md-3"
-        style={{ fontSize: "18px", fontWeight: "500" }}>
+        className="col mx-3 m-lg-3"
+        style={{ fontSize: "18px", fontWeight: "500" }}
+      >
         {question}
       </div>
       {open ? (
@@ -568,7 +643,7 @@ export function ButtonSelecter() {
     {
       ExpandedModel: "AGRICULTURE",
       // pic: AGRICULTUREpic,
-      pic: "https://s3-alpha-sig.figma.com/img/3129/240a/566ba2e175467c74f60927e7bcd70817?Expires=1691366400&Signature=glDeElSGe1Wol-QHXVIY1MggrqlyWb8BkHFYTVNe05JIE3E0rn0BxxImYgQ-mkfBvhsx6gD7IZidPtX77u7HM4JQ7szATWOz31C9HhW5hZaHUbFqDAE0OXb21hmnYJKSYXpBcOjjX~bLZzk1bQmioQHfN~WLNP6INrwKgfVE0VXEQL1RPZyRTmZoBb6BsLET-xQiPs4JRvlIO-S~W~mWyyFpwPmOedGof7g0WS4wQeUwFfAp-mD4q9oMn7bAL3efR~SivEmS9oFceXlyFJnMI-zP~a5yPqeFYRM2NK1zslRe3slua6h6mjfQEBzKK7IJVBlpzEEC2bcPzE6MrBV-WQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      pic: "https://s3-alpha-sig.figma.com/img/3129/240a/566ba2e175467c74f60927e7bcd70817?Expires=1691366400&Signature=glDeElSGe1Wol-QHXVIY1MggrqlyWb8BkHFYTVNe05JIE3E0rn0BxxImYgQ-mkfBvhsx6gD7IZidPtX77u7HM4JQ7szATWOz31C9HhW5hZaHUbFqDAE0OXb21hmnYJKSYXpBcOjjX~bLZzk1bQmioQHfN~WLNP6INrwKgfVE0VXEQL1RPZyRTmZoBb6BsLET-xQiPs4JRvlIO-S~W~mWyyFpwPmOedGof7g0WS4wQeUwFfAp-MD4q9oMn7bAL3efR~SivEmS9oFceXlyFJnMI-zP~a5yPqeFYRM2NK1zslRe3slua6h6mjfQEBzKK7IJVBlpzEEC2bcPzE6MrBV-WQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
       Herotext: "Empowering the Future of Agriculture with Modern IT Solutions",
 
       Subtext:
@@ -1159,7 +1234,8 @@ export function CommonSelectedExtendedPage({
               width: "200px",
               height: "11px",
               padding: "5px",
-            }}>
+            }}
+          >
             {ExpandedModel}
           </span>
 
@@ -1172,7 +1248,8 @@ export function CommonSelectedExtendedPage({
               fontFamily: "Barlow",
               // lineHeight: '70px',
               letterSpacing: "-1px",
-            }}>
+            }}
+          >
             {Herotext}
           </div>
           <div
@@ -1187,7 +1264,8 @@ export function CommonSelectedExtendedPage({
               marginBottom: "50px",
               marginTop: "30px",
               opacity: "0.6000000238418579",
-            }}>
+            }}
+          >
             {Subtext}
           </div>
 
@@ -1201,14 +1279,16 @@ export function CommonSelectedExtendedPage({
                 borderRadius: "4px",
                 background: "rgba(0, 0, 0, 0.05)",
                 width: "360px",
-              }}>
+              }}
+            >
               <div className="m-0">
                 <svg
                   width="12"
                   height="14"
                   viewBox="0 0 12 14"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <g id="Frame">
                     <path
                       id="Vector"
@@ -1224,7 +1304,8 @@ export function CommonSelectedExtendedPage({
                   color: "#161616",
                   fontSize: "10px",
                   fontFamily: "Space Grotesk",
-                }}>
+                }}
+              >
                 {point}
               </div>
             </div>
@@ -1236,7 +1317,8 @@ export function CommonSelectedExtendedPage({
               textEdge: "cap",
               fontSize: "36px",
               margin: "50px 0px 40px 0px",
-            }}>
+            }}
+          >
             {Headline}
           </div>
           <div
@@ -1253,12 +1335,14 @@ export function CommonSelectedExtendedPage({
               letterSpacing: "-0.1px",
               margin: "50px 0px 40px 0px",
               opacity: "0.6000000238418579",
-            }}>
+            }}
+          >
             {HeadlineText}
           </div>
           <div
             className="btn btn-dark"
-            style={{ fontSize: "13px", margin: "10px 0px 40px 0px" }}>
+            style={{ fontSize: "13px", margin: "10px 0px 40px 0px" }}
+          >
             Get in Touch
             <img src={rightarrow} alt="arrow" className=" p-1" />
           </div>
@@ -1271,7 +1355,8 @@ export function CommonSelectedExtendedPage({
               fontStyle: "normal",
               fontWeight: "600",
               margin: "50px 0px 40px 0px",
-            }}>
+            }}
+          >
             Frequently Asked Questions
           </div>
           {FAQs.map(({ question, Answer }) => (

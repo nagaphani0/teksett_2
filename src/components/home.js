@@ -19,12 +19,11 @@ import beeman from "../images/feedbeman.png";
 import rightarrow from "../images/rightarrow.png";
 import homefrentback from "../images/homefrentback.png";
 import homefrentpage from "../images/homefrentpage.png";
-// import { Col, Row } from 'react-bootstrap';
-import one from "../images/sysfacts-work-environemnt-0.jpg.png";
-import two from "../images/sysfacts-work-environemnt-12-1.jpg.png";
-import three from "../images/sysfacts-work-environemnt-3.jpg.png";
 import four from "../images/sysfacts-work-environemnt-4.jpg.png";
 import five from "../images/sysfacts-work-environemnt-5.jpg.png";
+import offpic from "../images/services/offshore.png";
+import dataana from "../images/services/dataanalysis.png";
+import datasci from "../images/services/datasci.png";
 import homevid from "../images/vid.png";
 import homegirl from "../images/homegirl.png";
 import image6 from "../images/image 6.png";
@@ -45,11 +44,11 @@ export default function Home() {
       <HomeFrentPage />
       <div className="row ">
         <div
-          className="col-3 col-md-1 ms-3 "
+          className="col-3 col-sm-3 col-lg-1  d-flex justify-content-center align-items-center "
           style={{
             color: "#707070",
             fontFamily: "Space Grotesk",
-            paddingTop: "10px",
+            // paddingTop: "10px",
             fontSize: "11px",
             fontStyle: "normal",
             fontWeight: "400",
@@ -127,14 +126,15 @@ function HomeIndustries() {
     <div className="container">
       <HomeBlogIntro
         model={"Industries"}
-        title={"Industries Transformed with Our IT Solutions"}
+        title={"Industries Transformed with"}
+        btitle={' Our IT Solutions'}
         des={
           "We leverage the latest technologies to transform businesses and organizations, enabling them to work smarter and more efficiently."
         }
       />
       <div className="row p-3 m-2">
         {box.map(({ pic, title, des }) => (
-          <div className="col-xs col-sm-4 col-md-4">
+          <div className="col col-sm-6 col-lg-4">
             <CommonCard pic={pic} title={title} des={des} />
           </div>
         ))}
@@ -143,11 +143,11 @@ function HomeIndustries() {
   );
 }
 
-function HomeBlogIntro({ model, title, des, black, extra, bigdes, insights }) {
+function HomeBlogIntro({ model, title, btitle, des, black, extra, bigdes, insights }) {
   return (
     <div className="container p-4 m-2">
       <div className="row p-3 m-3">
-        <div className="col-md-4 col-sm-4">
+        <div className="col-lg-4">
           {extra ? (
             <img src={image6} alt="none" height={"50%"} />
           ) : (
@@ -181,12 +181,14 @@ function HomeBlogIntro({ model, title, des, black, extra, bigdes, insights }) {
               fontStyle: "normal",
               fontWeight: 400,
             }}>
-            {title}
+            {title} <span style={{
+              color: '#707070'
+            }}> {btitle} </span>
           </div>
           {bigdes ? (
             ""
           ) : (
-            <div className="p-2 m-2">
+            <div className="py-2 my-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="51"
@@ -252,13 +254,13 @@ function HomeBlogIntro({ model, title, des, black, extra, bigdes, insights }) {
           </div>
           {bigdes ? (
             <div
-              className="btn"
+              className="btn my-3 p-2"
               style={{
                 borderRadius: "4px",
                 border: "1px solid #CECECE",
                 // width: '70px
-                padding: "11px ",
-                margin: "20px",
+                // padding: "11p ",
+                // margin: "20px",
               }}>
               Learn More
             </div>
@@ -267,13 +269,13 @@ function HomeBlogIntro({ model, title, des, black, extra, bigdes, insights }) {
           )}
           {insights ? (
             <div
-              className="btn"
+              className="btn my-3 p-2"
               style={{
                 borderRadius: "4px",
                 border: "1px solid #CECECE",
                 // width: '70px
-                padding: "11px ",
-                margin: "20px",
+                // padding: "11px ",
+                // margin: "20px",
               }}>
               View All Insights
             </div>
@@ -316,7 +318,7 @@ const FeedbackCarousel = () => {
   console.log(slides);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 768) {
         // Display fewer sponsors on mobile
         setSlides(1);
       } else {
@@ -438,7 +440,7 @@ function HomeFrentPage() {
   return (
     <div className="">
       <div
-        className="min-vh-lg-100 d-md-block d-lg-block"
+        className=""
         style={{
           backgroundImage: `url(${homefrentback})`,
           backgroundSize: "cover", // Ensure the background image covers the entire container
@@ -446,85 +448,85 @@ function HomeFrentPage() {
           backgroundRepeat: "no-repeat", // Prevent background image repetition
         }}>
 
-
-        <div className="position-relative">
-          {/* lg my screen*/}
-          <img
-            src={homefrentpage}
-            alt=""
-            style={{
-              height: "570px",
-            }}
-            className="img-fluid position-absolute top-0 end-0 px-4 m-3 d-lg-block d-md-none d-none"
-          />
-
-        </div>
-
-
-        <div className="d-flex justify-content-start align-items-center vh-100 mx-4 px-4">
-          <div className=" ">
-
-            <div
-              className=""
+        <div className=" container">
+          <div className="position-relative ">
+            {/* lg my screen*/}
+            <img
+              src={homefrentpage}
+              alt=""
               style={{
-                borderRadius: "4px",
-                padding: "0px",
-                background: "#EFEFEF",
-                width: "130px",
-                fontSize: "12px",
-              }}>
-              Your Reliable IT Partner
-            </div>
-            <div className="col-sm-10 col-lg-7"
-              style={{
-                color: "#161616",
-                fontSize: "55px",
-                lineHeight: "60px",
-                // fontFamily: 'Inter'
-                // letterSpacing: '-1.2px'
-              }}>
-              <span style={{ color: "#707070" }}>Modern IT solutions {"  "}</span>
-              to scale your Business
-            </div>
-            <div className="row ">
+                height: "570px",
+              }}
+              className="img-fluid position-absolute top-0 end-0  d-lg-block d-md-none d-none"
+            />
+
+          </div>
+
+
+          <div className="d-flex justify-content-start align-items-center vh-100 ">
+            <div className=" ">
+
               <div
-                className="btn col-3"
+                className=""
                 style={{
-                  fontSize: "11px",
-                  margin: "12px",
-                  padding: "2px",
-                  width: "120px",
-                  background: "#000",
-                  color: "white",
+                  borderRadius: "4px",
+                  padding: "0px",
+                  background: "#EFEFEF",
+                  width: "130px",
+                  fontSize: "12px",
                 }}>
-                Get in Touch
-                <img
-                  src={scale}
-                  alt=""
-                  style={{
-                    background: "#373737",
-                    height: "15px",
-                    margin: "6px",
-                  }}
-                />
-                <img
-                  src={rightarrow}
-                  alt="arrow"
-                  style={{ margin: "0px", height: "10px" }}
-                />
+                Your Reliable IT Partner
               </div>
-              {/* <div className="col-1 btn" style={{
+              <div className="col-sm-10 col-lg-7"
+                style={{
+                  color: "#161616",
+                  fontSize: "55px",
+                  lineHeight: "60px",
+                  // fontFamily: 'Inter'
+                  // letterSpacing: '-1.2px'
+                }}>
+                <span style={{ color: "#707070" }}>Modern IT solutions {"  "}</span>
+                to scale your Business
+              </div>
+              <div className="row ">
+                <div
+                  className="btn col-3"
+                  style={{
+                    fontSize: "11px",
+                    margin: "12px",
+                    padding: "2px",
+                    width: "120px",
+                    background: "#000",
+                    color: "white",
+                  }}>
+                  Get in Touch
+                  <img
+                    src={scale}
+                    alt=""
+                    style={{
+                      background: "#373737",
+                      height: "15px",
+                      margin: "6px",
+                    }}
+                  />
+                  <img
+                    src={rightarrow}
+                    alt="arrow"
+                    style={{ margin: "0px", height: "10px" }}
+                  />
+                </div>
+                {/* <div className="col-1 btn" style={{
               borderRadius: '4px',
               padding: '7px',
               // width: '10px',
               marginLeft: '10px',
               border: '1px solid #CECECE'
             }}>Services</div> */}
+              </div>
             </div>
           </div>
         </div>
       </div>
-
     </div >
   );
 }
@@ -534,7 +536,8 @@ function HomeWhoWeAre() {
     <div className=" container">
       <HomeBlogIntro
         model={"Who we are"}
-        title={"We're here to help you Succeed"}
+        title={"We're here to help you"}
+        btitle={' Succeed'}
         des={
           "We're a team of tech-savvy professionals who are passionate about finding the perfect IT solution for all your business needs. From providing cutting-edge solutions to customized staffing solutions, we go above and beyond to ensure your success."
         }
@@ -563,28 +566,28 @@ function HomeWhoWeAre() {
 function HomeWhatWeDo() {
   const temp = [
     {
-      pic: one,
+      pic: four,
       title: "IT solutions delivery",
       bol: false,
     },
     {
-      pic: two,
+      pic: five,
       title: "Staff augmentation services",
       bol: false,
     },
     {
-      pic: three,
+      pic: datasci,
       title: "Data science solutions",
       bol: false,
     },
     {
-      pic: four,
+      pic: dataana,
 
       title: "Business analytics",
       bol: false,
     },
     {
-      pic: five,
+      pic: offpic,
 
       title: "Offshore development",
       bol: false,
@@ -606,8 +609,8 @@ function HomeWhatWeDo() {
 
   return (
     <div className="p-3 m-2">
-      <div className="row">
-        <div className="col-md-3 col-sm">
+      <div className="row container">
+        <div className="col-lg-3">
           <div
             className=""
             style={{
@@ -630,24 +633,22 @@ function HomeWhatWeDo() {
         <div className="col-md-8 col-sm">
           {box.map(({ pic, title, bol }, index) => (
             <div className="row " key={index}>
-              <div className="col-sm-9 col-md d-flex">
+              <div className="d-flex">
                 <div
-                  className="col-md-9  col-sm display-4"
+                  className="display-5  py-2 my-lg-5 my-3"
                   onMouseEnter={() => handleEnter(index)}
                   onMouseLeave={() => handleExit(index)}
                   style={{
                     color: bol ? "#0F46F5" : "#000",
-                    // opacity: "0.199011612",
-                    padding: "8px",
-                    marginTop: "70px",
-                    marginLeft: "0px",
-                    // fontSize: '50px',
+                    // fontSize: '50px'
+                    // fontSize: '66.8px',
+                    // marginTop: "70px",
                   }}>
                   {title}
                 </div>
-                <div className="col-md-2 d-none d-md-block">
+                <div className="d-none col-lg-2 d-lg-block">
                   {bol ? (
-                    <img src={pic} className="" alt="none" height={"149px"} />
+                    <img src={pic} className="" alt="none" height={"149px"} width={'auto'} />
                   ) : (
                     <h3>{bol}</h3>
                   )}
@@ -687,7 +688,7 @@ function HomeWhatWeDo() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
@@ -735,7 +736,7 @@ function HomeWhyTeksett() {
     <MyVidContext.Provider value={[dataa, setDataa]}>
       <div className="bg-black">
         <div className="">
-          <div className=" container-fluid">
+          <div className=" container-lg-fluid  ">
             <HomeBlogIntro
               title={"Experience Top-Notch IT Solutions with Teksett"}
               model={"Why Teksett"}
@@ -751,7 +752,7 @@ function HomeWhyTeksett() {
           // style={{ padding: '120px', margin: '30px' }}
           >
             (
-            <div className="col-5 d-none d-md-block d-xl-block py-3 mx-3">
+            <div className="col-5 d-none d-lg-block py-3 mx-3">
               {dataa === false ? null : ( // /> //   // width={"150px"} //   // height={"150px"} //   " //   w-75 p-3 m-4 //   className="img-fluid //   alt="no" //   src={""} // <img
                 <video
                   className="video"
@@ -770,7 +771,7 @@ function HomeWhyTeksett() {
               )}
             </div>
             {/* <div className="col-5"> </div> */}
-            <div className="px-5 mx-2 col-1 col-md-1 d-md-flex justify-content-md-center  ">
+            <div className="px-5 mx-2 col-1 col-lg-1 d-lg-flex justify-content-md-center  ">
               <svg
                 width="11"
                 height="550"
@@ -835,13 +836,9 @@ function HomeWhyTeksett() {
               { num: "10+", text: "Industry Verticals" },
             ].map(({ num, text }) => (
               <div
-                className="col col-sm-4 col-md text-white m-2 px-md-4 py-md-2"
+                className="col col-sm-5 col-lg text-white mx-2 px-lg-4 py-lg-2"
                 style={{
                   background: "rgba(230, 230, 230, 0.10)",
-                  // width: '218px',
-                  // color: '#FFF',
-                  // height: '150px',
-                  // padding: '20px',
                 }}>
                 <div
                   className=""
@@ -936,10 +933,11 @@ function HomeTestimonials() {
     <div className="container">
       <HomeBlogIntro
         model={"Testimonials"}
-        title={"Hear from our satisfied clients"}
+        title={"Hear from our"}
+        btitle={' satisfied clients'}
       />
       <div className="row d-flex bg-black">
-        <div className="col-md-7 p-0">
+        <div className="col-lg-7 p-0">
           <img
             src={homegirl}
             // src="https://s3-alpha-sig.figma.com/img/77c6/4a50/99fe347da26dc05058b4f234d1c87b39?Expires=1691366400&Signature=komz~clxkqPpkZTe1D0FUX-u0XQ2L1w0oHwp28mGlYpRP1eQTsXYiuD7T~C0op2Gs72zj9Bzq~hNG5xl4va0anCFReHSMq~jNYTC4FjJbDAB-SaV31Ea5OOvfNcj4u-phF4xjRXLgQjT5eABPrDF5EWxZa8UBkFNqUORkUpZ7hfAJz82HR1sOMdVu6SHXIs2~prdXXCbI9LmJguXqcKD9HTviKQOl5o8rRmzHWQeGTTFwsyG30xQNC05AMd28tbFQIW~jUjf5FB8frCaPKGia9paMl3rzbE0HGg2WoFFqyp7vamJqolfEKdUOEqmGYqadD1THZPZYHcTRz6wpAnUBg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
@@ -954,8 +952,6 @@ function HomeTestimonials() {
               style={{
                 color: "rgba(255, 255, 255, 0.87)",
                 fontSize: "20px",
-                // padding: "40px",
-                // marginBottom: "50px",
               }}>
               Teksett has been instrumental in the success of our manufacturing
               business. As a founder, I wanted a reliable IT partner to handle

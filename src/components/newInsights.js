@@ -55,7 +55,7 @@ function Intro() {
           }}>{`TEksett < insights`}</div>
 
         <div
-          className="col-sm-2 col-md-7"
+          className="col-sm-2 col-lg-7"
           style={{
             position: "absolute",
             top: "180px",
@@ -121,7 +121,7 @@ function ScrolableHistory() {
   // console.log(slides);
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth <= 768) {
         // Display fewer sponsors on mobile
         setSlides(1);
       } else {
@@ -202,7 +202,7 @@ function ScrolableHistory() {
           modules={[Navigation]}
           spaceBetween={50}
           slidesPerView={slides} //2 slides
-          className="px-md "
+          className="px-lg "
           style={{ paddingLeft: "30%" }}
           navigation={{
             nextEl: ".swiper-button-next",
@@ -251,7 +251,7 @@ function EmployeTestimonials() {
   return (
     <div>
       <div id="employe testimonials" className="container-fluid row p-3 m-3">
-        <div className="col-10 col-md-3 m-4 ">
+        <div className="col-10 col-lg-3 m-4 ">
           <img
             // src={jacob}
             src={jacob}
@@ -277,7 +277,7 @@ function EmployeTestimonials() {
             Jacob S.
           </div>
           <div
-            className="p-3 col-md-9"
+            className="p-3 col-lg-9"
             style={{
               color: "rgba(22, 22, 22, 0.87)",
               fontfamily: "Barlow",
@@ -411,12 +411,12 @@ function WorkBenfits() {
   ];
   return (
     <div
-      className="m-0 p-4"
+      className="m-0 p-4 "
       style={{ backgroundColor: "black", color: "#fff" }}>
-      <div className="row">
-        <div className="col-md-4">
-          <div
-            className=" mx-4 p-1 p-md-1 m-md-4 col-5 col-md-4"
+      <div className="row container">
+        <div className="col-lg-4">
+          <spam
+            className="p-1 p-lg-1 m-lg-4"
             style={{
               borderRadius: "4px",
               backgroundColor: "#efefef",
@@ -429,12 +429,12 @@ function WorkBenfits() {
               color: "black",
             }}>
             work benefits
-          </div>
+          </spam>
         </div>
 
         <div className="col">
           <div
-            className="p-4 p-md-2 display-md-2 display-2"
+            className="p-lg-2 display-lg-5 display-5"
             style={{
               // fontSize: "60px",
               lineHeight: "65px",
@@ -445,9 +445,9 @@ function WorkBenfits() {
             Why work with us
           </div>
 
-          <div className="row m-4 p-1">
+          <div className="row  p-1">
             {benfits.map(({ pic, title, des }) => (
-              <div className="col-md-6 p-3">
+              <div className="col-lg-6 p-3">
                 <div>{pic}</div>
                 <hr />
                 <div className="fs-4"
@@ -509,10 +509,10 @@ function Careers() {
   ];
   return (
     <div className="" style={{ backgroundColor: " black", color: "#fff" }}>
-      <div className="row px-4 mx-2">
-        <div className="col-md-4">
-          <div
-            className="p-2 my-4 m-md-4  col-3 col-md-3"
+      <div className="row py-3 px-4 mx-2">
+        <div className="col-lg-4">
+          <span
+            className="p-1 "
             style={{
               borderRadius: "4px",
               backgroundColor: "#efefef",
@@ -525,20 +525,20 @@ function Careers() {
               color: "black",
             }}>
             Careers
-          </div>
+          </span>
         </div>
 
-        <div className="col-md-7 ">
+        <div className="col-lg-7 ">
           <div
-            className=""
+            className=" display-4"
             style={{
               color: "#FFF",
-              leadingTrim: "both",
-              textEdge: "cap",
-              fontFamily: "Barlow",
-              fontSize: "70px",
-              fontStyle: "normal",
-              fontWeight: "400",
+              // leadingTrim: "both",
+              // textEdge: "cap",
+              // fontFamily: "Barlow",
+              // fontSize: "70px",
+              // fontStyle: "normal",
+              // fontWeight: "400",
               lineHeight: "88px" /* 125.714% */,
               letterSpacing: "-1.2px",
             }}>
@@ -546,7 +546,7 @@ function Careers() {
           </div>
           {openings.map(({ role, Location, Experience }) => (
             <div className="row text-bg-dark p-2 my-4">
-              <div className="col-7 col-md-8 p-2">
+              <div className="col-sm-7 col-lg-8 p-2">
                 <div
                   className="role p-2"
                   styles={{
@@ -586,7 +586,7 @@ function Careers() {
                   </div>
                 </div>
               </div>
-              <div className="d-none d-md-block col-md">
+              <div className="d-none d-lg-block col-lg">
                 <svg
                   width="1"
                   height="90"
@@ -603,23 +603,21 @@ function Careers() {
                   />
                 </svg>
               </div>
-              <div className="col-5 col-md-3 d-flex justify-content-center align-items-center ">
+              <div className="col-sm-5 col-lg-3 d-flex justify-content-sm-center justify-content-lg-center align-items-center">
                 <div
                   className="btn d-flex"
                   style={{
                     // borderRadius: '4px',
                     color: "#FFF",
                     background: "#0F46F5",
-
-                    // letterSpacing: "1px",
-                    // lineHeight: "12px",
-                    // fontWeight: "500",
                   }}>
-                  <div className=" lh-2 w-100">
+                  <div className=" lh-2 w-100" style={{
+                    fontFamily: 'Space Grotesk'
+                  }}>
 
                     Apply Now
                   </div>
-                  <div className="px-1 d- d-md-block">
+                  <div className="px-1 d- d-lg-block">
                     <svg
                       width="2"
                       height="16"
@@ -635,7 +633,7 @@ function Careers() {
                       />
                     </svg>
                   </div>
-                  <div className="d- d-md-block">
+                  <div className="d- d-lg-block">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
