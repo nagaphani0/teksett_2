@@ -8,7 +8,6 @@ import Hamburger from 'hamburger-react'
 
 export default function NavBar() {
   const [currentPage, setCurrentPage] = useState("Home");
-
   const [open, setOpen] = useState(false)
 
   return (
@@ -171,7 +170,7 @@ export default function NavBar() {
           </div>
         </div>
         {/* <div className="col-6 col-lg-2"> </div> */}
-        <div className="col-lg-2 d-flex justify-content-lg-end" >
+        <div className="col-lg-2 d-flex justify-content-lg-end h-50" >
           <div
             className={` ${open ? 'px-5 fw-bold' : 'd-none d-lg-flex d-lg-block p-1 text-white bg-black'}`}
             style={{
@@ -216,7 +215,6 @@ export default function NavBar() {
                 // </div>
               } */}
           </div>
-
           <div className="position-fixed top-0 end-0 d-lg-none d-sm-block m-2">
             <Hamburger className='hamburger' toggled={open} toggle={setOpen} />
           </div>

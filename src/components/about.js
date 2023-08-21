@@ -178,7 +178,7 @@ function Secondcircle({ num, text }) {
             borderRadius: "450px",
             width: "280px",
             height: "280px",
-            // 
+
             // margin: '40px',
             // padding: "",
             // flexShrink: "0",

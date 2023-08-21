@@ -38,4 +38,4 @@ bootstrap
 xs - phone
 
 sm - tab
-lg - laptop
+md/lg - laptop

@@ -134,7 +134,7 @@ function HomeIndustries() {
       />
       <div className="row p-3 m-2">
         {box.map(({ pic, title, des }) => (
-          <div className="col col-sm-6 col-lg-4">
+          <div className="col col-sm-6 col-lg-4 p-1">
             <CommonCard pic={pic} title={title} des={des} />
           </div>
         ))}
@@ -145,8 +145,8 @@ function HomeIndustries() {
 
 function HomeBlogIntro({ model, title, btitle, des, black, extra, bigdes, insights }) {
   return (
-    <div className="container p-4 m-2">
-      <div className="row p-3 m-3">
+    <div className="container-lg p-4 m-2">
+      <div className="row p-lg-3 m-lg-3">
         <div className="col-lg-4">
           {extra ? (
             <img src={image6} alt="none" height={"50%"} />
@@ -459,11 +459,9 @@ function HomeFrentPage() {
               }}
               className="img-fluid position-absolute top-0 end-0  d-lg-block d-md-none d-none"
             />
-
           </div>
 
-
-          <div className="d-flex justify-content-start align-items-center vh-100 ">
+          <div className="d-flex justify-content-start align-items-center vh-100 p-2 m-3 p-lg-0 m-lg-0">
             <div className=" ">
 
               <div

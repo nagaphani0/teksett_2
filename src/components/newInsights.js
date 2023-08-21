@@ -3,7 +3,6 @@ import home from "../images/insights/Rectangle 32.png";
 // import jacob from "../images/team (8).png";
 import { HomeBlogsArticles } from "./home";
 import jacob from "../images/sponsers/Rectangle 59.png";
-
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -99,21 +98,45 @@ function ScrolableHistory() {
       year: 1996,
       title: "Teksett was Founded",
       des: "Teksett was founded in Omaha. It started as a small startup with a focus on developing software applications for businesses and providing best IT solutions.",
-      pic: ppic,
+      pic: "co1996.png",
     },
     {
       year: 2001,
-      title: "Partnership",
+      title: "Expansion and Growth",
       // title: "Teksett was Founded",
-
-      des: "The company expands its product line and starts offering web development services to cater to the growing demand for online solutions.",
-      pic: ppic,
+      des: "Teksett expands its service offerings to encompass software development and IT consulting with companies like Tyson Foods, Honda Motors, Bell Atlantic (Formerly Verizon).",
+      // pic: "https://s3-alpha-sig.figma.com/img/82dd/08d5/579b176a40c9dc87028ed6ee6dace485?Expires=1693180800&Signature=iOqQEOEgN2YDPlao7VJoWhmxPeN3AqsjGEoPdL2~vIdQEXkLIcxWJEnoBmUAdV8FCigq7O1xbZXrHvJTekbhRijSkypoMybjF6iM7EB~719CFBTB1IGMkyoqp8DLYzGv3zeq--4gj1jlfJ0hMbYRw0ttXbh-g~Aa2EtIOqnFo0iwmHNy0ywdQHQQpynAGcbXZofq5PPOOOlPT2caAosY37Ot~Poz4etQWVCa3CNDLI4RP8Xz5oBFmdgzbSASKHif7gqYz-U4DYqBtqAGd~VyCAR8qf~IFpyAqak1tLlCjgNaIXX0ug4x4EwlUPoorzoJU5NSNQjvUCnol9tTVfKq5A__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+      pic: 'co2001.png'
     },
     {
-      year: 2005,
-      title: "Partnership",
-      des: "The company expands its product line and starts offering web development services to cater to the growing demand for online solutions.",
-      pic: ppic,
+      year: 2006,
+      title: "Strategic Partnerships",
+      des: "Teksett forms strategic partnerships with industry-leading tech companies like Google & Microsoft to enhance its service capabilities.",
+      pic: 'co2006.png'
+      // pic: "https://s3-alpha-sig.figma.com/img/a5b8/653a/b9b24c751a4d8124c41c4bee2e5acf50?Expires=1693180800&Signature=S7knqKqipFmLd5C4un24KtbhXG1FhCOUw12rTftlzcIfLKfYWU3cPheCt7uBB88SG2uI7BubbCjpvgPC~t3Ha8eXC1gAlcLpSeQ3tf9Z4bcg58oo0DY31de3rHb0KobsiThL~F-ZSiLnMzMNMr6eRjIexKyfOE3aGllvsNcOhdZGpm7DZLwfAgdfrTH7JSgiZGlejduxZRR3GVtNzpYZgUmEHkyO2zDyO0ILU5yOAzhmACkUdkT2O9Oo01K-4N3otLY1Actl087utluwwA5JRWpVCqSNOG2kJwLuOI2yjiBiQIoPqdpWMOktQHnEw5JGVJMZZ4vtYjl-RnqYzwCpBQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    }, {
+      year: 2011,
+      title: "Industry Recognition",
+      des: "Teksett receives its first industry award for excellence in software development and client satisfaction.",
+      pic: 'co2011.png'
+      // pic: "https://s3-alpha-sig.figma.com/img/feb2/4669/c11206de14a4d11805d8690141065ef5?Expires=1693180800&Signature=HqmB~bFJc8IcnsnRs7lJVlHW7OSo2JkRd0CZgYDhl~k1Ny4qtuX9vB9ccXfzuv-12wkxmogBd3qakbU84syoej-i~DmZaofUuX5uvyjnuHhWNVoFXbvhty~8rZYe8UJVi487Ua6GAqxqz63Bj8o9EZSa8k7F0iVdjymeJhdSmDqwr-cIeH3PEETjB~PVVTWDuZVH35TiAxDO~tz8FWo~uJGoW4Xa2usCZbFOTGYkeVJtgjiJLDzNv~npLlWIvdrm~W6ysEVrdTjNqaaieQ-uHKpiWkJ87KUG-0PzK-9ssVwJ~eKj3j7eh5oCHua-Co1X--rCsa~jEkkBWBzeLBDaJQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    }, {
+      year: 2016,
+      title: "Cloud Expertise",
+      des: "Teksett becomes a trusted provider of cloud solutions, helping businesses migrate and optimize their operations in the cloud.",
+      pic: 'co2019.png',
+
+    }, {
+      year: 2021,
+      title: "Industry-Specific Solutions",
+      des: "Teksett develops industry-specific IT solutions, catering to the unique needs of various sectors, from healthcare to finance.",
+      pic: "https://s3-alpha-sig.figma.com/img/3a73/2f7f/1e46e47f834455421ef2f4a546cadccf?Expires=1693180800&Signature=ZHuodQR~V3oNsL2BHsVXkUp~yd97EdVjpqLGxlk0NG3oL90Ld-ECwRGpmM2Lxp6tfwyJdx4IqjIxsTWg8ZTwxYT7a7q9Uwg44mZebelV0Bb34YNkJflqiiX2rMPPjZPBfWAMErpWr6lp69ZGuGpMG4v9zOuh9XZqR2qCm5bNGkxr1yBqbLRg-Q3IzMsQpKOLPNbcqMH6XBaUPK1xHe7a3qg~tQwrWOqQGOX0Hl4YYYvuJFdxxdAm-bIDK9R1cXdhy70L22W~JHooRNCinnWnCzTVz2BR9Z5e34USEG5dYOrLefYn0ao4CDVUmc5p80K2SdmgPYezT9s0JYb0NwCBoQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+    },
+    {
+      year: 2023,
+      title: "Sustainable IT Practices",
+      des: "Teksett embraces eco-friendly IT practices, promoting sustainability in technology solutions and operations",
+      pic: "https://s3-alpha-sig.figma.com/img/513f/e8cd/27158485c9b0b7eeec6d23eb294f2566?Expires=1693180800&Signature=Qs6Um7Hy3Xi~uRyxa8orLr8x-bnSKgKUp0qEa5rvJs8EnPdI7lPjYbCaqviFK48Mir408Ma0wLZjAQoIcqwOJL9qgQ2gotkeseFdQYu8yV~5hJ42tlwHdG3dI1s-37FQcZER0K93Em1UwkssmnHhmSamoZLMG5DsHB92Zi4H7kqeFctNsO2Ojocw~dL24bMehpl4o3IhGVCcF9m~FB5p9r6InmijBdzpF43ELfh576HgmmDFRzhbx6HlnlO1VgEpvn7e4N7AGtwQxZ-X1m7wzCh1YCMiXg0fR2tIcCYFD3LD1HJBM9RXXZgows4~2oGj1ybhDoc8odlyCViAreKxEA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
     },
   ];
 
@@ -217,26 +240,33 @@ function ScrolableHistory() {
                     <div className="">{title}</div>
                   </div>
                   <hr width={"130%"} />
-                  <div
-                    className=" py-2 my-2"
-                    style={{
-                      color: "#161616",
-                      // fontFamily: "Barlow",
-                      fontSize: "20px",
-                      // fontStyle: "normal",
-                      fontWeight: "400",
-                      // marginBottom:''
-                      // width: "300px",
-                    }}>
-                    {des}
+                  <div className="row d-flex flex-column">
+                    <div className="col">
+                      <div
+                        className="py-2 my-2"
+                        style={{
+                          color: "#161616",
+                          // fontFamily: "Barlow",
+                          fontSize: "20px",
+                          // fontStyle: "normal",
+                          fontWeight: "400",
+                          // marginBottom:''
+                          // width: "300px",
+                        }}>
+                        {des}
+                      </div>
+                    </div>
+                    <div className="col-9">
+                      <img
+                        className="img-fluid "
+                        src={pic}
+                        // src=""
+                        alt="none"
+                        height={"60%"}
+                        width={"400px"}
+                      />
+                    </div>
                   </div>
-                  <img
-                    className="img-fluid "
-                    src={pic}
-                    alt="none"
-                    height={"60%"}
-                    width={"400px"}
-                  />
                 </div>
               </div>
             </SwiperSlide>
@@ -611,7 +641,7 @@ function Careers() {
                     color: "#FFF",
                     background: "#0F46F5",
                   }}>
-                  <div className=" lh-2 w-100" style={{
+                  <div className="lh-2 w-100" style={{
                     fontFamily: 'Space Grotesk'
                   }}>
 

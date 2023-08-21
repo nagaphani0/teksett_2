@@ -42,16 +42,16 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="row d-flex mx-0 p-2">
-        <div className="col-xs col-md-4 col-lg-4 d-flex mx-0">
+        <div className="col col-lg-4 col-lg-4 d-flex mx-0">
           <img
             src={pic}
             alt="none"
-            className="img-fluid py-md-1 h-md-auto w-md-auto"
+            className="img-fluid py-lg-1 h-lg-auto w-lg-auto"
           />
         </div>
-        <div className="col-7 col-md-5  text">
+        <div className="col-7 col-lg-5  text">
           <div
-            className="my-md-3 display-6  col"
+            className="my-lg-3 display-6  col"
             style={
               {
                 // color: "#161616",
@@ -69,11 +69,10 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
               color: "#9C9C9C",
               // fontSize: "14px",
               lineHeight: "20px",
-            }}
-          >
+            }}>
             {des}
           </div>
-          <div className="col-md-2 mx-2 d-none d-md-block d-lg-none d-xl-none d-flex align-items-end justify-content-end link">
+          <div className="col-lg-2 mx-2 d-lg-none d-flex align-items-end justify-content-end link">
             <Link
               to={`/${mainlin}/${title.toLowerCase()}`}
               className="btn btn-dark p-2 "
@@ -82,9 +81,9 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
             </Link>
           </div>
 
-          <div className="d-none d-sm-none d-md-none d-lg-block">
+          <div className="d-none d-sm-none d-lg-none d-lg-block">
             <div
-              className="p-md-3 d-none d-md-block d-xl-block"
+              className="p-lg-3 d-none d-lg-block d-xl-block"
               style={{
                 // color: "#FFF",
                 fontSize: "11px",
@@ -96,7 +95,7 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
             >
               Top Benefits
             </div>
-            <div className="col-md-7 " id="points" style={{ fontSize: "12px" }}>
+            <div className="col-lg-7 " id="points" style={{ fontSize: "12px" }}>
               {points.map((point) => (
                 <div
                   className="col m-2 w-75 d-flex"
@@ -129,7 +128,7 @@ export default function CommonIS({ pic, title, des, points, mainlin }) {
             </div>
           </div>
         </div>
-        <div className="col-md-2 mx-xs mx-md-3 mx-lg-3 d-lg-none d-xs-block align-items-end justify-content-end link">
+        <div className="col-lg-2 mx-0 mx-lg-3 mx-lg-3 d-lg-block d-sm-none d-flex align-items-end justify-content-end link">
           <Link
             to={`/${mainlin}/${title.toLowerCase()}`}
             className="btn btn-dark p-lg-2 m-lg-3 p-lg-2 m-lg-3"
@@ -146,13 +145,13 @@ export function CommonCard({ pic, title, des }) {
   return (
     <Zoomm className="">
       <div
-        className="card border-1 zoom-in-effect"
+        className="card border-1 zoom-in-effect "
         style={{ fontFamily: "Space Grotesk" }}
       >
-        <img src={pic} className="card-img-top img-fluid" alt="Card Image" />
+        <img src={pic} className="card-img-top img-fluid p-1 m-0" alt="Card Image" />
         <div className="card-body">
           <div
-            className="card-title fs-5"
+            className="card-title fs-5 "
             style={{
               // fontSize: "20px",
               fontFamily: "Space Grotesk",
@@ -301,12 +300,13 @@ export function Sponsers() {
   const sponsers = [s1, s2, s3, s4, s5, s6, s7, s8, s9, s10];
   const [displayedSponsors, setDisplayedSponsors] = useState([]);
   // console.log("displayedSponsors", displayedSponsors[0]);
-
+  console.log(displayedSponsors.length)
+  // debugger
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         // Display fewer sponsors on mobile
-        setDisplayedSponsors(sponsers.slice(0, 3));
+        setDisplayedSponsors(sponsers.slice(0, 4));
       } else {
         // Display all sponsors on larger screens
         setDisplayedSponsors(sponsers);
@@ -359,7 +359,7 @@ export function Sponsers() {
           alt="none"
           src={displayedSponsors[3]}
         />
-        <img
+        {displayedSponsors.length > 4 ? <img
           className=" dell"
           style={{
             maxWidth: "80px",
@@ -367,8 +367,8 @@ export function Sponsers() {
           }}
           alt="none"
           src={displayedSponsors[4]}
-        />
-        <img
+        /> : ''}
+        {displayedSponsors.length > 4 ? <img
           className="intel"
           style={{
             maxWidth: "75px",
@@ -376,8 +376,8 @@ export function Sponsers() {
           }}
           alt="none"
           src={displayedSponsors[5]}
-        />
-        <img
+        /> : ''}
+        {displayedSponsors.length > 4 ? <img
           className="ibm"
           style={{
             maxWidth: "80px",
@@ -385,8 +385,8 @@ export function Sponsers() {
           }}
           alt="none"
           src={displayedSponsors[6]}
-        />
-        <img
+        /> : ''}
+        {displayedSponsors.length > 4 ? <img
           className="img-fluid microsoft"
           style={{
             maxWidth: "105px",
@@ -394,8 +394,8 @@ export function Sponsers() {
           }}
           alt="none"
           src={displayedSponsors[7]}
-        />
-        <img
+        /> : ''}
+        {displayedSponsors.length > 4 ? <img
           className="img-fluid youtube"
           style={{
             maxWidth: "105px",
@@ -403,8 +403,8 @@ export function Sponsers() {
           }}
           alt="none"
           src={displayedSponsors[8]}
-        />
-        <img
+        /> : ''}
+        {displayedSponsors.length > 4 ? <img
           className="img-fluid hp"
           style={{
             maxWidth: "105px",
@@ -412,7 +412,7 @@ export function Sponsers() {
           }}
           alt="none"
           src={displayedSponsors[9]}
-        />
+        /> : ''}
       </div>
     </div>
   );
